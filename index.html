@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Primary SEO -->
+<title>Kaafi Hai — India Salary & Cost of Living Calculator</title>
+<meta name="description" content="Find out exactly how much you'll earn after rent, food and transport if you move cities in India. Compare salaries and cost of living across 20 cities. Free instantly, no login.">
+<meta name="keywords" content="cost of living calculator india, salary comparison india, mumbai vs bangalore salary, hyderabad cost of living, should i move to bangalore, india city salary calculator">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Kaafi Hai">
+<link rel="canonical" href="https://kaafihai.in/">
+
+<!-- Open Graph — WhatsApp, LinkedIn, Facebook previews -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kaafi Hai — Will you actually earn more in that city?">
+<meta property="og:description" content="Compare salaries and cost of living across 20 Indian cities. See your real take-home after rent, food and transport. Free and instant.">
+<meta property="og:url" content="https://kaafihai.in/">
+<meta property="og:site_name" content="Kaafi Hai">
+<meta property="og:image" content="https://kaafihai.in/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_IN">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kaafi Hai — Will you actually earn more in that city?">
+<meta name="twitter:description" content="Compare salaries and cost of living across 20 Indian cities. See your real take-home after rent, food and transport.">
+<meta name="twitter:image" content="https://kaafihai.in/og-image.png">
+
+<!-- Schema: WebApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Kaafi Hai",
+  "description": "India salary and cost of living calculator. Compare take-home pay across 20 Indian cities after rent, food and transport.",
+  "url": "https://kaafihai.in",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+  "inLanguage": "en-IN",
+  "audience": { "@type": "Audience", "geographicArea": { "@type": "Country", "name": "India" } }
+}
+</script>
+
+<!-- Schema: FAQ — gets Google rich results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Is Bangalore more expensive than Hyderabad?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A moderate lifestyle in Bangalore costs around ₹37,000/month vs ₹28,000/month in Hyderabad — roughly 32% more expensive. However, Bangalore salaries are typically 10–15% higher for tech roles." } },
+    { "@type": "Question", "name": "What is the cost of living in Mumbai for a single person?", "acceptedAnswer": { "@type": "Answer", "text": "A single person living a moderate lifestyle in Mumbai spends approximately ₹47,000/month — covering rent (₹28,000), food (₹8,000), transport (₹3,500), utilities (₹2,500) and miscellaneous (₹5,000)." } },
+    { "@type": "Question", "name": "Which Indian city has the lowest cost of living?", "acceptedAnswer": { "@type": "Answer", "text": "Among major Indian cities, Bhopal, Indore and Nagpur have the lowest cost of living — a moderate lifestyle costs approximately ₹18,000–20,000/month for a single person." } },
+    { "@type": "Question", "name": "How much salary do I need to live comfortably in Bangalore?", "acceptedAnswer": { "@type": "Answer", "text": "To live comfortably in Bangalore as a single person, you need at least ₹75,000–80,000/month gross salary. This covers a comfortable flat (₹45,000), food (₹13,000), transport (₹6,500) and leaves a meaningful monthly surplus." } }
+  ]
+}
+</script>
+
+<!-- Favicon (inline SVG as data URI — no extra file needed) -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231a5c3a'/><text y='24' x='4' font-size='22' font-family='serif'>₹</text></svg>">
+
+<!-- Google Analytics — replace G-XXXXXXXXXX with your Measurement ID -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+
+<!-- Cuelinks affiliate — replace XXXXXXXX with your publisher ID from cuelinks.com -->
+<!-- <script src="//cl.cuelinks.com/cljs/XXXXXXXX.js" async></script> -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0b0b0b;--ink-2:#3d3d3d;--ink-3:#8a8a8a;
+  --paper:#f5f2ec;--paper-2:#eceae3;--paper-3:#dedad0;
+  --white:#fff;
+  --green:#1a5c3a;--green-mid:#2d7a52;--green-light:#e5f2eb;
+  --amber:#9a6c1a;--red:#a33020;
+  --ff-d:'Syne',sans-serif;--ff-b:'Inter',sans-serif;
+  --ease:cubic-bezier(0.16,1,0.3,1);
+}
+
+/* DARK MODE */
+[data-theme="dark"]{
+  --ink:#f0ede6;--ink-2:#c5c0b5;--ink-3:#7a7670;
+  --paper:#0f0f0d;--paper-2:#1a1917;--paper-3:#262420;
+  --white:#1e1c1a;
+  --green:#2d9e62;--green-mid:#3db876;--green-light:#0d2b1a;
+}
+[data-theme="dark"] header{background:rgba(15,15,13,.92)}
+[data-theme="dark"] .calc-card,[data-theme="dark"] .about-card,[data-theme="dark"] .feedback-card,[data-theme="dark"] .faq-item{background:var(--white);border-color:var(--paper-3)}
+[data-theme="dark"] .sal-col{background:var(--paper-2)}
+[data-theme="dark"] .sal-col.winner{background:var(--green-light)}
+[data-theme="dark"] .share-modal{background:var(--white)}
+[data-theme="dark"] .tcard{background:var(--paper-2)}
+[data-theme="dark"] select,[data-theme="dark"] input,[data-theme="dark"] textarea{background:var(--paper-2);color:var(--ink)}
+[data-theme="dark"] .smbtn{background:var(--paper-2);color:var(--ink-2);border-color:var(--paper-3)}
+
+/* DARK MODE TOGGLE */
+.dm-toggle{background:none;border:1.5px solid var(--paper-3);border-radius:100px;padding:.3rem .7rem;cursor:pointer;font-size:.85rem;transition:all 150ms;color:var(--ink-2)}
+.dm-toggle:hover{border-color:var(--ink-3)}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff-b);background:var(--paper);color:var(--ink);min-height:100vh;-webkit-font-smoothing:antialiased;overflow-x:hidden;cursor:none}
+
+/* CURSOR */
+#cur{position:fixed;width:12px;height:12px;background:var(--ink);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width 200ms,height 200ms,background 200ms;mix-blend-mode:difference}
+#curring{position:fixed;width:38px;height:38px;border:1.5px solid rgba(11,11,11,0.25);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width 250ms var(--ease),height 250ms var(--ease),border-color 250ms}
+body:has(button:hover) #cur,body:has(a:hover) #cur,body:has(select:hover) #cur,body:has(input:hover) #cur{width:22px;height:22px;background:var(--green)}
+body:has(button:hover) #curring,body:has(a:hover) #curring,body:has(select:hover) #curring{width:52px;height:52px;border-color:rgba(26,92,58,0.35)}
+
+/* ── 3D CITY CARDS ── */
+.city-cards-stage{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.city-card-3d{position:absolute;transform-style:preserve-3d;will-change:transform}
+.city-card-3d .cc-inner{
+  background:rgba(255,255,255,0.055);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:12px;
+  padding:.5rem .85rem;
+  backdrop-filter:blur(4px);
+  -webkit-backdrop-filter:blur(4px);
+  display:flex;flex-direction:column;gap:.1rem;
+  box-shadow:0 4px 20px rgba(0,0,0,.06),inset 0 1px 0 rgba(255,255,255,.12);
+  transition:background 500ms,border-color 500ms,box-shadow 500ms;
+  white-space:nowrap;
+
+}
+.city-card-3d.active .cc-inner{
+  background:rgba(26,92,58,0.12);
+  border-color:rgba(26,92,58,0.35);
+  box-shadow:0 0 0 1px rgba(26,92,58,0.2),0 4px 24px rgba(26,92,58,0.15),inset 0 1px 0 rgba(255,255,255,.15);
+}
+[data-theme="dark"] .city-card-3d .cc-inner{background:rgba(255,255,255,0.03);border-color:rgba(255,255,255,0.07)}
+[data-theme="dark"] .city-card-3d.active .cc-inner{background:rgba(45,158,98,0.12);border-color:rgba(45,158,98,0.3)}
+.cc-name{font-family:var(--ff-d);font-size:.75rem;font-weight:700;color:var(--ink);letter-spacing:-.2px;opacity:.7}
+.cc-val{font-size:.65rem;font-weight:500;color:var(--green);opacity:.8}
+.cc-pulse{width:5px;height:5px;border-radius:50%;background:var(--green);position:absolute;top:.4rem;right:.4rem;opacity:0;animation:ccpulse 2.5s ease-in-out infinite}
+.city-card-3d.active .cc-pulse{opacity:1}
+@keyframes ccpulse{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.8);opacity:.2}}
+
+/* ── PARTICLE FIELD ── */
+#particleCanvas{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.45}
+[data-theme="dark"] #particleCanvas{opacity:.6}
+
+/* ── MAGNETIC CURSOR TRAIL ── */
+.trail-dot{position:fixed;border-radius:50%;pointer-events:none;z-index:9997;transform:translate(-50%,-50%);transition:background 300ms}
+
+/* ── FLOATING ₹ (keep but refine) ── */
+.rf{position:absolute;font-family:var(--ff-d);font-weight:800;opacity:.035;animation:rup linear infinite;user-select:none;color:var(--ink);pointer-events:none}
+@keyframes rup{0%{transform:translateY(0) rotate(0deg);opacity:.035}50%{opacity:.07}100%{transform:translateY(-100px) rotate(15deg);opacity:0}}
+
+/* HEADER */
+header{padding:1.1rem 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;background:rgba(245,242,236,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--paper-3)}
+.logo{font-family:var(--ff-d);font-size:1.2rem;font-weight:800;color:var(--ink);text-decoration:none;letter-spacing:-.3px}
+.logo em{font-style:normal;color:var(--green)}
+.nav-links{display:flex;align-items:center;gap:.75rem}
+.nav-pill{font-size:.8rem;font-weight:500;color:var(--ink-2);text-decoration:none;background:var(--paper-2);padding:.35rem .9rem;border-radius:100px;border:1px solid var(--paper-3);transition:all 150ms;white-space:nowrap}
+.nav-pill:hover{border-color:var(--ink-3);color:var(--ink)}
+.nav-pill.primary{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.nav-pill.primary:hover{background:#1a1a1a}
+
+/* HERO */
+.hero{min-height:88vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:5rem 1.5rem 3rem;text-align:center;position:relative;z-index:1}
+.hgrid{position:absolute;inset:0;background-image:linear-gradient(var(--paper-2) 1px,transparent 1px),linear-gradient(90deg,var(--paper-2) 1px,transparent 1px);background-size:55px 55px;mask-image:radial-gradient(ellipse 85% 75% at 50% 50%,black 20%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 85% 75% at 50% 50%,black 20%,transparent 100%);opacity:.5;pointer-events:none}
+.ticker{display:flex;align-items:center;gap:.4rem;margin-bottom:2.5rem;flex-wrap:wrap;justify-content:center;position:relative;z-index:1}
+.tp{display:inline-flex;align-items:baseline;gap:.35rem;background:var(--white);border:1px solid var(--paper-3);border-radius:100px;padding:.3rem .8rem;font-size:.8rem;color:var(--ink-2);white-space:nowrap;transition:all 200ms;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.tp:hover{border-color:var(--green);transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,92,58,.1)}
+.tc{font-weight:700;color:var(--ink);font-family:var(--ff-d)}
+.tco{font-size:.75rem;color:var(--green);font-weight:500}
+.tsep{color:var(--paper-3)}
+.hero-h1{font-family:var(--ff-d);font-size:clamp(2.8rem,7vw,5.2rem);font-weight:800;line-height:1.0;letter-spacing:-3px;color:var(--ink);margin-bottom:1.5rem;position:relative;z-index:1;max-width:860px}
+.hero-h1 .key{color:var(--green);display:inline-block;position:relative}
+.hero-h1 .key::after{content:'';position:absolute;bottom:-3px;left:0;width:100%;height:3px;background:var(--green);transform:scaleX(0);transform-origin:left;animation:uline .9s var(--ease) .7s forwards;border-radius:2px}
+@keyframes uline{to{transform:scaleX(1)}}
+.diff-card{display:inline-flex;align-items:center;gap:1.25rem;background:var(--white);border:1px solid var(--paper-3);border-radius:18px;padding:1.1rem 1.75rem;margin-bottom:2rem;position:relative;z-index:1;flex-wrap:wrap;justify-content:center;box-shadow:0 4px 24px rgba(0,0,0,.06);transition:box-shadow 300ms,transform 300ms}
+.diff-card:hover{box-shadow:0 8px 40px rgba(0,0,0,.1);transform:translateY(-2px)}
+.dlabel{font-size:.72rem;font-weight:500;color:var(--ink-3)}
+.dcities{font-family:var(--ff-d);font-size:.88rem;font-weight:700;color:var(--ink);margin-top:.1rem}
+.ddiv{width:1px;height:2.8rem;background:var(--paper-3);flex-shrink:0}
+.dnum{font-family:var(--ff-d);font-size:2.4rem;font-weight:800;letter-spacing:-2.5px;line-height:1;color:var(--green);transition:color 400ms;display:block}
+.dnum.red{color:var(--red)}
+.dsub{font-size:.7rem;color:var(--ink-3);margin-top:.1rem}
+.hselects{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:center;position:relative;z-index:1;margin-bottom:1.5rem}
+.hsw{position:relative}
+.hsw select{appearance:none;-webkit-appearance:none;background:var(--white);border:1.5px solid var(--paper-3);border-radius:12px;padding:.7rem 2.2rem .7rem 1rem;font-family:var(--ff-d);font-size:.95rem;font-weight:700;color:var(--ink);cursor:pointer;outline:none;transition:all 150ms;min-width:150px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.hsw select:hover{border-color:var(--ink-3)}
+.hsw select:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(26,92,58,.1)}
+.hsw::after{content:'▾';position:absolute;right:.8rem;top:50%;transform:translateY(-50%);font-size:.8rem;color:var(--ink-3);pointer-events:none}
+.harrow{color:var(--ink-3);font-size:1.3rem}
+.hero-sub{font-size:.9rem;color:var(--ink-3);position:relative;z-index:1;margin-bottom:2rem}
+.hero-cta{display:inline-flex;align-items:center;gap:.55rem;background:var(--ink);color:var(--white);border:none;border-radius:12px;padding:1rem 2.4rem;font-family:var(--ff-d);font-size:1rem;font-weight:700;cursor:pointer;position:relative;z-index:1;transition:all 150ms;box-shadow:0 4px 20px rgba(11,11,11,.2)}
+.hero-cta:hover{background:#1a1a1a;box-shadow:0 8px 32px rgba(11,11,11,.3);transform:translateY(-1px)}
+.hero-cta:active{transform:scale(.98)}
+.ctaarr{transition:transform 200ms}
+.hero-cta:hover .ctaarr{transform:translateX(4px)}
+
+
+/* CALCULATOR */
+.calc-section{padding:5rem 1.25rem;max-width:860px;margin:0 auto;position:relative;z-index:1}
+.sec-kicker{font-family:var(--ff-d);font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ink-3);margin-bottom:.5rem}
+.sec-title{font-family:var(--ff-d);font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800;letter-spacing:-1.5px;color:var(--ink);margin-bottom:2.5rem;line-height:1.1}
+.calc-card{background:var(--white);border:1px solid var(--paper-3);border-radius:20px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.06)}
+.csteps{display:flex;border-bottom:1px solid var(--paper-2)}
+.cstep{flex:1;padding:1rem 1.25rem;font-size:.7rem;font-weight:600;color:var(--ink-3);letter-spacing:.5px;text-transform:uppercase;border-right:1px solid var(--paper-2);display:flex;align-items:center;gap:.45rem}
+.cstep:last-child{border-right:none}
+.csn{width:20px;height:20px;border-radius:50%;background:var(--paper-2);display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700;color:var(--ink-3);flex-shrink:0}
+.cstep.on .csn{background:var(--ink);color:var(--white)}
+.cstep.on{color:var(--ink)}
+.calc-body{padding:2rem}
+.job-row{margin-bottom:1.5rem}
+.job-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:.4rem}
+.city-row{display:grid;grid-template-columns:1fr auto 1fr;gap:1rem;align-items:end;margin-bottom:1.5rem}
+.amid{color:var(--ink-3);font-size:1.2rem;padding-bottom:.65rem;text-align:center}
+.sal-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem}
+.fg{display:flex;flex-direction:column;gap:.35rem}
+.fl{font-size:.75rem;font-weight:500;color:var(--ink-3)}
+.fw{position:relative}
+.fw::after{content:'▾';position:absolute;right:.8rem;top:50%;transform:translateY(-50%);font-size:.8rem;color:var(--ink-3);pointer-events:none}
+select,input[type=number]{width:100%;padding:.72rem 1rem;border:1.5px solid var(--paper-3);border-radius:9px;font-family:var(--ff-b);font-size:.95rem;color:var(--ink);background:var(--paper);appearance:none;-webkit-appearance:none;outline:none;transition:all 150ms}
+select:hover,input[type=number]:hover{background:var(--white);border-color:var(--ink-3)}
+select:focus,input[type=number]:focus{border-color:var(--green);background:var(--white);box-shadow:0 0 0 3px rgba(26,92,58,.1)}
+.ls-label{font-size:.75rem;font-weight:500;color:var(--ink-3);margin-bottom:.5rem}
+.ls-pills{display:flex;gap:.5rem;flex-wrap:wrap}
+.lpill{padding:.45rem 1.1rem;border:1.5px solid var(--paper-3);border-radius:100px;font-size:.82rem;font-weight:500;font-family:var(--ff-b);background:var(--paper);color:var(--ink-2);cursor:pointer;transition:all 150ms}
+.lpill:hover{border-color:var(--ink-3);color:var(--ink)}
+.lpill.on{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.calc-foot{padding:1.25rem 2rem 1.5rem;border-top:1px solid var(--paper-2);display:flex;justify-content:center}
+.go-btn{display:inline-flex;align-items:center;gap:.6rem;background:var(--green);color:var(--white);border:none;border-radius:10px;padding:.95rem 2.5rem;font-family:var(--ff-d);font-size:1rem;font-weight:700;cursor:pointer;transition:all 150ms;box-shadow:0 4px 18px rgba(26,92,58,.3)}
+.go-btn:hover{background:var(--green-mid);box-shadow:0 6px 24px rgba(26,92,58,.4);transform:translateY(-1px)}
+.go-btn:active{transform:scale(.98)}
+
+/* RESULTS */
+#results{display:none}
+#results.show{display:block}
+.sal-band{padding:1.75rem 2rem;border-top:1px solid var(--paper-2);background:var(--paper);display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.sal-col{background:var(--white);border:1px solid var(--paper-3);border-radius:14px;padding:1.25rem 1.5rem}
+.sal-col.winner{border-color:var(--green);background:var(--green-light)}
+.sal-city-name{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.8px;color:var(--ink-3);margin-bottom:.35rem}
+.sal-gross{font-family:var(--ff-d);font-size:1.8rem;font-weight:800;letter-spacing:-1.5px;color:var(--ink);line-height:1}
+.sal-gross.win{color:var(--green)}
+.sal-takehome{font-size:.82rem;color:var(--ink-3);margin-top:.3rem}
+.sal-takehome strong{color:var(--ink);font-weight:600}
+.winner-badge{display:inline-block;background:var(--green);color:var(--white);border-radius:100px;padding:.2rem .65rem;font-size:.65rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:.35rem}
+.verdict-band{padding:2rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
+.verdict-band.great{background:var(--green)}
+.verdict-band.okay{background:var(--amber)}
+.verdict-band.tight{background:var(--red)}
+.vsurplus{font-family:var(--ff-d);font-size:3rem;font-weight:800;letter-spacing:-3px;line-height:1;color:var(--white);white-space:nowrap}
+.vpill{display:inline-block;background:rgba(255,255,255,.2);border-radius:100px;padding:.25rem .8rem;font-size:.7rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--white);margin-bottom:.5rem}
+.vhl{font-family:var(--ff-d);font-size:1.35rem;font-weight:700;letter-spacing:-.5px;line-height:1.2;color:var(--white)}
+.vsub{font-size:.82rem;color:rgba(255,255,255,.7);margin-top:.3rem}
+.bdrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(115px,1fr));border-top:1px solid var(--paper-2)}
+.bdc{padding:1.2rem 1.25rem;border-right:1px solid var(--paper-2);border-bottom:1px solid var(--paper-2)}
+.bdc:last-child{border-right:none}
+.bdcat{font-size:.67rem;font-weight:500;color:var(--ink-3);text-transform:uppercase;letter-spacing:.8px;margin-bottom:.3rem}
+.bdamt{font-family:var(--ff-d);font-size:1.05rem;font-weight:700;color:var(--ink);letter-spacing:-.5px}
+.bdnote{font-size:.67rem;color:var(--ink-3);margin-top:.1rem}
+.ai-panel{padding:1.75rem 2rem;border-top:1px solid var(--paper-2);background:var(--white)}
+.ai-topbar{display:flex;align-items:center;gap:.5rem;margin-bottom:1rem}
+.ai-badge{display:inline-flex;align-items:center;gap:.4rem;background:var(--green-light);color:var(--green);border-radius:100px;padding:.25rem .7rem;font-size:.7rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+.ai-dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 1.8s ease-in-out infinite}
+.ai-dot.done{animation:none}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.8)}}
+.ai-body{font-size:.97rem;line-height:1.8;color:var(--ink-2);min-height:2.5rem}
+.ai-body strong{color:var(--ink);font-weight:500}
+.bars-panel{padding:1.75rem 2rem;border-top:1px solid var(--paper-2);background:var(--paper)}
+.bars-title{font-family:var(--ff-d);font-size:.88rem;font-weight:700;color:var(--ink);margin-bottom:1rem}
+.bars-leg{display:flex;gap:1.25rem;margin-bottom:1.25rem;flex-wrap:wrap}
+.li{display:flex;align-items:center;gap:.4rem;font-size:.78rem;color:var(--ink-2);font-weight:500}
+.ld{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.bg2{margin-bottom:1rem}
+.bgl{font-size:.7rem;font-weight:600;color:var(--ink-3);letter-spacing:.5px;text-transform:uppercase;margin-bottom:.4rem}
+.bl{display:grid;grid-template-columns:1fr 90px;align-items:center;gap:.75rem;margin-bottom:.3rem}
+.bt{height:9px;background:var(--paper-2);border-radius:100px;overflow:hidden}
+.bf{height:100%;border-radius:100px;background:var(--ink);transition:width 700ms var(--ease)}
+.bf.c2{background:var(--green)}
+.ba{font-size:.78rem;font-weight:500;color:var(--ink-2);text-align:right;white-space:nowrap}
+.tips-panel{padding:1.75rem 2rem 2rem;border-top:1px solid var(--paper-2);background:var(--white)}
+.tips-title{font-family:var(--ff-d);font-size:.88rem;font-weight:700;color:var(--ink);margin-bottom:1.1rem}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.75rem}
+.tcard{background:var(--paper);border:1px solid var(--paper-3);border-radius:12px;padding:1rem 1.1rem;transition:all 200ms}
+.tcard:hover{border-color:var(--ink-3);transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.06)}
+.tico{font-size:1.15rem;margin-bottom:.4rem}
+.tbody{font-size:.83rem;color:var(--ink-2);line-height:1.65}
+.aff-row{padding:1.25rem 2rem;border-top:1px solid var(--paper-2);background:var(--green-light);display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.aff-text{font-size:.85rem;color:var(--green);font-weight:500;flex:1;min-width:180px}
+.aff-links{display:flex;gap:.75rem;flex-wrap:wrap}
+.aff-btn{display:inline-flex;align-items:center;background:var(--green);color:var(--white);border:none;border-radius:8px;padding:.55rem 1.2rem;font-family:var(--ff-b);font-size:.83rem;font-weight:600;cursor:pointer;text-decoration:none;transition:background 150ms;white-space:nowrap}
+.aff-btn:hover{background:var(--green-mid)}
+.aff-btn.sec{background:var(--white);color:var(--green);border:1.5px solid var(--green)}
+.aff-btn.sec:hover{background:var(--green-light)}
+.reset-row{padding:1rem 2rem;border-top:1px solid var(--paper-2);text-align:center}
+.reset-btn{background:none;border:1.5px solid var(--paper-3);border-radius:8px;padding:.5rem 1.5rem;font-size:.82rem;font-weight:500;font-family:var(--ff-b);color:var(--ink-3);cursor:pointer;transition:all 150ms}
+.reset-btn:hover{border-color:var(--ink-3);color:var(--ink)}
+
+/* SHARE CARD */
+.share-row{padding:1.25rem 2rem;border-top:1px solid var(--paper-2);background:var(--paper);display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.share-label{font-size:.8rem;font-weight:600;color:var(--ink-2)}
+.share-btns{display:flex;gap:.6rem;flex-wrap:wrap}
+.share-btn{display:inline-flex;align-items:center;gap:.4rem;border:1.5px solid var(--paper-3);border-radius:8px;padding:.5rem 1rem;font-family:var(--ff-b);font-size:.8rem;font-weight:600;cursor:pointer;background:var(--white);color:var(--ink-2);text-decoration:none;transition:all 150ms;white-space:nowrap}
+.share-btn:hover{border-color:var(--ink);color:var(--ink);transform:translateY(-1px)}
+.share-btn.tw:hover{border-color:#1da1f2;color:#1da1f2}
+.share-btn.wa:hover{border-color:#25d366;color:#25d366}
+.share-btn.li:hover{border-color:#0077b5;color:#0077b5}
+.share-btn.cp:hover{border-color:var(--green);color:var(--green)}
+/* share result card overlay */
+.share-overlay{position:fixed;inset:0;background:rgba(11,11,11,.7);z-index:1000;display:flex;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity 250ms}
+.share-overlay.show{opacity:1;pointer-events:all}
+.share-modal{background:var(--white);border-radius:20px;overflow:hidden;max-width:480px;width:100%;box-shadow:0 24px 80px rgba(0,0,0,.25)}
+.share-card-visual{background:var(--green);padding:2rem;text-align:center}
+.scv-eyebrow{font-size:.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:.75rem}
+.scv-main{font-family:var(--ff-d);font-size:1.8rem;font-weight:800;color:var(--white);letter-spacing:-1px;line-height:1.2;margin-bottom:.5rem}
+.scv-main.red-card{background:var(--red)}
+.scv-sub{font-size:.85rem;color:rgba(255,255,255,.75);margin-bottom:1.25rem}
+.scv-cities{display:inline-flex;align-items:center;gap:.6rem;background:rgba(255,255,255,.15);border-radius:100px;padding:.35rem .9rem;font-size:.78rem;color:var(--white);font-weight:600}
+.share-modal-foot{padding:1.25rem 1.5rem;display:flex;flex-direction:column;gap:.75rem}
+.share-modal-btns{display:flex;gap:.6rem;flex-wrap:wrap}
+.smbtn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:.4rem;border:1.5px solid var(--paper-3);border-radius:8px;padding:.6rem .5rem;font-family:var(--ff-b);font-size:.8rem;font-weight:600;cursor:pointer;background:var(--white);color:var(--ink-2);text-decoration:none;transition:all 150ms;white-space:nowrap;min-width:0}
+.smbtn:hover{border-color:var(--ink);color:var(--ink)}
+.smbtn.tw:hover{border-color:#1da1f2;color:#1da1f2}
+.smbtn.wa:hover{border-color:#25d366;color:#25d366}
+.smbtn.li:hover{border-color:#0077b5;color:#0077b5}
+.smbtn.cp{background:var(--green);color:var(--white);border-color:var(--green)}
+.smbtn.cp:hover{background:var(--green-mid)}
+.share-modal-close{background:none;border:none;font-size:.82rem;color:var(--ink-3);cursor:pointer;text-align:center;padding:.25rem;transition:color 150ms}
+.share-modal-close:hover{color:var(--ink)}
+.copied-toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--white);border-radius:8px;padding:.6rem 1.25rem;font-size:.82rem;font-weight:500;opacity:0;transition:all 300ms;pointer-events:none;z-index:2000;white-space:nowrap}
+.copied-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* HOW IT WORKS */
+.how-section{padding:5rem 1.25rem;max-width:860px;margin:0 auto;border-top:1px solid var(--paper-3);position:relative;z-index:1}
+.how-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-top:2.5rem}
+.hcard{border-left:3px solid var(--paper-3);padding-left:1.25rem;transition:border-color 200ms}
+.hcard:hover{border-color:var(--green)}
+.hn{font-family:var(--ff-d);font-size:2rem;font-weight:800;color:var(--paper-3);line-height:1;margin-bottom:.5rem}
+.ht{font-family:var(--ff-d);font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:.4rem}
+.hb{font-size:.85rem;color:var(--ink-3);line-height:1.65}
+
+/* FAQ SECTION */
+.faq-section{padding:5rem 1.25rem;max-width:760px;margin:0 auto;border-top:1px solid var(--paper-3);position:relative;z-index:1}
+.faq-list{margin-top:2rem;display:flex;flex-direction:column;gap:.75rem}
+.faq-item{background:var(--white);border:1px solid var(--paper-3);border-radius:12px;overflow:hidden}
+.faq-q{width:100%;text-align:left;padding:1.1rem 1.25rem;background:none;border:none;font-family:var(--ff-d);font-size:.95rem;font-weight:700;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem;transition:background 150ms}
+.faq-q:hover{background:var(--paper)}
+.faq-icon{flex-shrink:0;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--paper-3);display:flex;align-items:center;justify-content:center;font-size:.8rem;color:var(--ink-3);transition:all 200ms;font-style:normal}
+.faq-item.open .faq-icon{background:var(--green);border-color:var(--green);color:var(--white);transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 400ms var(--ease),padding 200ms}
+.faq-a-inner{padding:0 1.25rem 1.1rem;font-size:.88rem;color:var(--ink-2);line-height:1.75}
+.faq-item.open .faq-a{max-height:300px}
+
+/* ABOUT SECTION */
+.about-section{padding:5rem 1.25rem;max-width:760px;margin:0 auto;border-top:1px solid var(--paper-3);position:relative;z-index:1}
+.about-card{background:var(--white);border:1px solid var(--paper-3);border-radius:20px;padding:2.5rem;margin-top:2rem}
+.about-body{font-size:.95rem;color:var(--ink-2);line-height:1.85}
+.about-body p{margin-bottom:1rem}
+.about-body p:last-child{margin-bottom:0}
+.about-body strong{color:var(--ink);font-weight:600}
+.about-body a{color:var(--green);text-decoration:none;border-bottom:1px solid var(--green-light)}
+.about-body a:hover{border-color:var(--green)}
+
+/* FEEDBACK / CONTACT */
+.feedback-section{padding:5rem 1.25rem;max-width:760px;margin:0 auto;border-top:1px solid var(--paper-3);position:relative;z-index:1}
+.feedback-card{background:var(--white);border:1px solid var(--paper-3);border-radius:20px;padding:2.5rem;margin-top:2rem}
+.fb-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.fb-field{display:flex;flex-direction:column;gap:.35rem}
+.fb-label{font-size:.75rem;font-weight:500;color:var(--ink-3)}
+.fb-input{width:100%;padding:.72rem 1rem;border:1.5px solid var(--paper-3);border-radius:9px;font-family:var(--ff-b);font-size:.9rem;color:var(--ink);background:var(--paper);outline:none;transition:all 150ms}
+.fb-input:focus{border-color:var(--green);background:var(--white);box-shadow:0 0 0 3px rgba(26,92,58,.1)}
+.fb-textarea{resize:vertical;min-height:100px;line-height:1.6}
+.fb-select{appearance:none;-webkit-appearance:none;cursor:pointer}
+.fb-submit{display:inline-flex;align-items:center;gap:.5rem;background:var(--green);color:var(--white);border:none;border-radius:9px;padding:.8rem 2rem;font-family:var(--ff-d);font-size:.9rem;font-weight:700;cursor:pointer;transition:all 150ms;margin-top:.5rem}
+.fb-submit:hover{background:var(--green-mid);transform:translateY(-1px)}
+.fb-submit:active{transform:scale(.98)}
+.fb-success{display:none;background:var(--green-light);border:1px solid var(--green);border-radius:10px;padding:1rem 1.25rem;font-size:.9rem;color:var(--green);font-weight:500;margin-top:1rem;text-align:center}
+.fb-success.show{display:block}
+.fb-note{font-size:.78rem;color:var(--ink-3);margin-top:1rem;line-height:1.6}
+.fb-note a{color:var(--green);text-decoration:none}
+
+/* FOOTER */
+footer{border-top:1px solid var(--paper-3);padding:3rem 2rem 2rem;position:relative;z-index:1}
+.footer-inner{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start}
+.footer-brand{}
+.footer-logo{font-family:var(--ff-d);font-size:1.1rem;font-weight:800;color:var(--ink);text-decoration:none}
+.footer-logo em{font-style:normal;color:var(--green)}
+.footer-tagline{font-size:.8rem;color:var(--ink-3);margin-top:.3rem;line-height:1.5}
+.footer-links{display:flex;flex-direction:column;gap:.5rem;align-items:flex-end}
+.footer-links a{font-size:.82rem;color:var(--ink-3);text-decoration:none;transition:color 150ms}
+.footer-links a:hover{color:var(--green)}
+.footer-bottom{max-width:860px;margin:2rem auto 0;padding-top:1.5rem;border-top:1px solid var(--paper-2);font-size:.75rem;color:var(--ink-3);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+.footer-bottom a{color:var(--ink-3);text-decoration:none}
+.footer-bottom a:hover{color:var(--green)}
+
+/* SUPPORT SECTION */
+.support-section{padding:5rem 1.25rem;max-width:760px;margin:0 auto;border-top:1px solid var(--paper-3);position:relative;z-index:1}
+.support-intro{font-size:.95rem;color:var(--ink-2);margin-bottom:2rem;max-width:580px;line-height:1.75}
+.support-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem}
+.support-card{background:var(--white);border:1px solid var(--paper-3);border-radius:16px;padding:1.5rem;display:flex;flex-direction:column;gap:.75rem;transition:border-color 200ms,box-shadow 200ms}
+.support-card:hover{border-color:var(--ink-3);box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.support-card.featured{border-color:var(--green);background:var(--green-light)}
+.support-icon{font-size:1.5rem}
+.support-title{font-family:var(--ff-d);font-size:.95rem;font-weight:700;color:var(--ink);letter-spacing:-.2px}
+.support-desc{font-size:.82rem;color:var(--ink-2);line-height:1.6}
+.support-price{font-family:var(--ff-d);font-size:1.1rem;font-weight:800;color:var(--green);letter-spacing:-.5px}
+.support-price.free{color:var(--ink-3);font-size:.85rem;font-weight:500}
+.support-btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;background:var(--ink);color:var(--white);border:none;border-radius:8px;padding:.6rem 1.25rem;font-family:var(--ff-d);font-size:.82rem;font-weight:700;cursor:pointer;text-decoration:none;transition:background 150ms;width:100%;margin-top:auto}
+.support-btn:hover{background:#1a1a1a;text-decoration:none}
+.support-btn.green{background:var(--green)}
+.support-btn.green:hover{background:var(--green-mid)}
+.support-note{font-size:.78rem;color:var(--ink-3);text-align:center;line-height:1.6}
+.support-note a{color:var(--green)}
+/* Amazon strip in results */
+.amazon-strip{padding:1rem 2rem;border-top:1px solid var(--paper-2);background:var(--paper-2);display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.amazon-strip-label{font-size:.8rem;color:var(--ink-2);font-weight:500;flex-shrink:0}
+.amazon-links{display:flex;gap:.5rem;flex-wrap:wrap}
+.amazon-link{display:inline-flex;align-items:center;gap:.35rem;background:var(--white);border:1px solid var(--paper-3);border-radius:6px;padding:.35rem .75rem;font-size:.75rem;font-weight:500;color:var(--ink-2);text-decoration:none;transition:all 150ms;white-space:nowrap}
+.amazon-link:hover{border-color:var(--ink-3);color:var(--ink);text-decoration:none}
+@media(max-width:640px){
+  .support-grid{grid-template-columns:1fr}
+  .amazon-strip{padding:1rem 1.25rem;flex-direction:column;align-items:flex-start}
+}
+
+/* DOTS */
+.dots span{display:inline-block;animation:dp 1.2s infinite;opacity:.25}
+.dots span:nth-child(2){animation-delay:.2s}
+.dots span:nth-child(3){animation-delay:.4s}
+@keyframes dp{0%,80%,100%{opacity:.25}40%{opacity:1}}
+
+/* ENTRANCE */
+@keyframes fadeup{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.ani{animation:fadeup .7s var(--ease) both}
+.d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.35s}.d4{animation-delay:.45s}.d5{animation-delay:.55s}
+
+/* MOBILE */
+@media(max-width:640px){
+  header{padding:1rem 1.25rem}
+  .nav-links{gap:.4rem}
+  .nav-pill{font-size:.72rem;padding:.3rem .7rem}
+  .nav-links .nav-pill:not(.primary){display:none}
+  .dm-toggle{padding:.3rem .55rem;font-size:.8rem}
+  body{cursor:auto}
+  #cur,#curring{display:none}
+  .trail-dot{display:none}
+  .city-card-3d{opacity:.0!important}
+  .city-cards-stage{display:none}
+  #particleCanvas{opacity:.2}
+  #cur,#curring{display:none}
+  .hero{min-height:auto;padding:3rem 1.25rem 3rem}
+  .hero-h1{letter-spacing:-2px}
+  .diff-card{padding:.9rem 1.1rem;gap:.75rem}
+  .dnum{font-size:1.8rem}
+  .ddiv{display:none}
+  .hsw select{min-width:125px;font-size:.88rem}
+
+  .calc-section{padding:3rem .75rem}
+  .csteps{display:none}
+  .calc-body{padding:1.25rem}
+  .calc-foot{padding:1rem 1.25rem 1.25rem}
+  .city-row{grid-template-columns:1fr;gap:.75rem}
+  .amid{display:none}
+  .sal-grid{grid-template-columns:1fr}
+  .job-grid{grid-template-columns:1fr}
+  .sal-band{grid-template-columns:1fr;gap:1rem;padding:1.25rem}
+  .verdict-band{padding:1.5rem;gap:1rem}
+  .vsurplus{font-size:2.2rem}
+  .bdrow{grid-template-columns:1fr 1fr}
+  .bdc:nth-child(even){border-right:none}
+  .ai-panel,.bars-panel,.tips-panel{padding:1.25rem}
+  .aff-row{padding:1.25rem;flex-direction:column;align-items:flex-start}
+  .share-row{padding:1.25rem;flex-direction:column;align-items:flex-start;gap:.75rem}
+  .share-btns{gap:.4rem;flex-wrap:wrap}
+  .share-btn{font-size:.72rem;padding:.4rem .75rem}
+  .share-modal{border-radius:16px;margin:1rem}
+  .scv-main{font-size:1.4rem}
+  .share-modal-btns{flex-wrap:wrap}
+  .smbtn{font-size:.75rem;flex:1;justify-content:center;min-width:110px}
+  .go-btn{width:100%;justify-content:center}
+  .diff-card{padding:.85rem 1.1rem;gap:.6rem}
+  .dnum{font-size:1.75rem;letter-spacing:-1.5px}
+  .ddiv{display:none}
+  .vsurplus{font-size:2rem;letter-spacing:-2px}
+  .vhl{font-size:1.1rem;letter-spacing:-.3px}
+  .hsw select{min-width:125px;font-size:.85rem}
+  .how-section,.faq-section,.about-section,.feedback-section{padding:3rem 1.25rem}
+  .about-card,.feedback-card{padding:1.5rem}
+  .fb-grid{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr}
+  .footer-links{align-items:flex-start}
+  .footer-bottom{flex-direction:column}
+  .reset-row{padding:1rem 1.25rem}
+}
+@media(max-width:380px){
+  .hero-h1{font-size:2.4rem;letter-spacing:-1.5px}
+  .bdrow{grid-template-columns:1fr}
+  .bdc{border-right:none}
+}
+</style>
+</head>
+<body>
+
+<canvas id="particleCanvas" aria-hidden="true"></canvas>
+<div id="cur"></div>
+<div id="curring"></div>
+
+<header>
+  <a class="logo" href="#home" aria-label="Kaafi Hai Home">Kaafi<em>Hai</em></a>
+  <nav class="nav-links" aria-label="Site navigation">
+    <a class="nav-pill" href="#how">How it works</a>
+    <a class="nav-pill" href="#about">About</a>
+    <a class="nav-pill" href="#feedback">Feedback</a>
+    <a class="nav-pill" href="#support">Support</a>
+    <button class="dm-toggle" onclick="toggleDark()" id="dmBtn" aria-label="Toggle dark mode">🌙</button>
+    <a class="nav-pill primary" href="#calc">Get verdict →</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home" aria-label="Hero">
+  <div class="hgrid" aria-hidden="true"></div>
+  <div class="city-cards-stage" id="cityCardsStage" aria-hidden="true"></div>
+  <div class="ticker ani d1" id="ticker" aria-label="City cost snapshots"></div>
+  <h1 class="hero-h1 ani d2">Will you actually<br><span class="key">earn more</span> there?</h1>
+  <div class="diff-card ani d3" id="diffCard" aria-live="polite">
+    <div>
+      <div class="dlabel">In your pocket</div>
+      <div class="dcities" id="dcities">Hyderabad → Bangalore</div>
+    </div>
+    <div class="ddiv" aria-hidden="true"></div>
+    <div>
+      <span class="dnum" id="dnum">+₹14,200</span>
+      <div class="dsub" id="dsub">more per month after expenses</div>
+    </div>
+  </div>
+  <div class="hselects ani d4">
+    <div class="hsw">
+      <label for="hc1" class="visually-hidden">From city</label>
+      <select id="hc1" onchange="updateDiff()" aria-label="Current city"></select>
+    </div>
+    <span class="harrow" aria-hidden="true">→</span>
+    <div class="hsw">
+      <label for="hc2" class="visually-hidden">To city</label>
+      <select id="hc2" onchange="updateDiff()" aria-label="Target city"></select>
+    </div>
+  </div>
+  <p class="hero-sub ani d4">Your salary number is a lie until you subtract rent, food and transport from it</p>
+  <button class="hero-cta ani d5" onclick="scrollToCalc()">
+    Show me what I actually keep
+    <svg class="ctaarr" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3.5 9h11M9.5 4l5 5-5 5"/></svg>
+  </button>
+
+</section>
+
+<!-- CALCULATOR -->
+<section class="calc-section" id="calc" aria-label="Cost of living calculator">
+  <h2 class="sec-title">Run the numbers</h2>
+  <div class="calc-card">
+    <div class="csteps" aria-label="Steps">
+      <div class="cstep on"><div class="csn" aria-hidden="true">1</div>Job title</div>
+      <div class="cstep on"><div class="csn" aria-hidden="true">2</div>Cities</div>
+      <div class="cstep on"><div class="csn" aria-hidden="true">3</div>Salary & lifestyle</div>
+    </div>
+    <div class="calc-body">
+      <div class="job-row">
+        <div class="fl">Job title & experience level</div>
+        <div class="job-grid">
+          <div class="fg">
+            <label class="fl" for="jobTitle">Role</label>
+            <div class="fw"><select id="jobTitle" onchange="autoFillSalary()"></select></div>
+          </div>
+          <div class="fg">
+            <label class="fl" for="expLevel">Experience</label>
+            <div class="fw">
+              <select id="expLevel" onchange="autoFillSalary()">
+                <option value="junior">Junior (0–3 yrs)</option>
+                <option value="mid" selected>Mid (3–6 yrs)</option>
+                <option value="senior">Senior (6+ yrs)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="city-row">
+        <div class="fg">
+          <label class="fl" for="city1">Current city</label>
+          <div class="fw"><select id="city1"></select></div>
+        </div>
+        <div class="amid" aria-hidden="true">→</div>
+        <div class="fg">
+          <label class="fl" for="city2">Target city</label>
+          <div class="fw"><select id="city2"></select></div>
+        </div>
+      </div>
+      <div class="sal-grid">
+        <div class="fg">
+          <label class="fl" for="salary">Your monthly salary in current city (₹)</label>
+          <input type="number" id="salary" placeholder="e.g. 75000" min="1000" aria-describedby="salary-hint">
+          <span id="salary-hint" style="font-size:.7rem;color:var(--ink-3)">Filled from your role and city — change it if it's off</span>
+        </div>
+        <div class="fg">
+          <label class="fl" for="members">Household size</label>
+          <div class="fw">
+            <select id="members">
+              <option value="1">Just me</option>
+              <option value="2">2 people</option>
+              <option value="3">Family of 3</option>
+              <option value="4">Family of 4+</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="ls-label">Lifestyle</div>
+        <div class="ls-pills" role="group" aria-label="Lifestyle">
+          <button class="lpill" data-val="frugal" onclick="setLS(this)">Frugal</button>
+          <button class="lpill on" data-val="moderate" onclick="setLS(this)">Moderate</button>
+          <button class="lpill" data-val="comfortable" onclick="setLS(this)">Comfortable</button>
+        </div>
+      </div>
+    </div>
+    <div class="calc-foot">
+      <button class="go-btn" onclick="calculate()">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg>
+        Show my real take-home
+      </button>
+    </div>
+    <div id="results" aria-live="polite">
+      <div class="sal-band" id="salBand"></div>
+      <div class="verdict-band" id="vband">
+        <div class="vsurplus" id="vsurf"></div>
+        <div>
+          <div class="vpill" id="vpill"></div>
+          <div class="vhl" id="vhl"></div>
+          <div class="vsub" id="vsub"></div>
+        </div>
+      </div>
+      <div class="bdrow" id="bdrow"></div>
+      <div class="ai-panel">
+        <div class="ai-topbar">
+          <div class="ai-badge"><div class="ai-dot" id="aiDot" aria-hidden="true"></div>Our read</div>
+        </div>
+        <div class="ai-body" id="aiBody" aria-live="polite"><span class="dots"><span>.</span><span>.</span><span>.</span></span></div>
+      </div>
+      <div class="bars-panel">
+        <div class="bars-title">Where the money goes — city by city</div>
+        <div class="bars-leg" id="barsLeg"></div>
+        <div id="barsContent"></div>
+      </div>
+      <div class="tips-panel">
+        <div class="tips-title" id="tipsTitle">Money moves</div>
+        <div class="tgrid" id="tgrid"></div>
+      </div>
+      <div class="aff-row" id="affRow">
+        <div class="aff-text" id="affText">If the numbers work — here's where to start</div>
+        <div class="aff-links">
+          <a class="aff-btn" id="affJobBtn" href="https://www.naukri.com" target="_blank" rel="noopener noreferrer">Find jobs on Naukri →</a>
+          <a class="aff-btn sec" id="affFlatBtn" href="https://www.nobroker.in" target="_blank" rel="noopener noreferrer">Find flats on NoBroker →</a>
+        </div>
+      </div>
+      <div class="amazon-strip" id="amazonStrip">
+        <span class="amazon-strip-label">📦 Moving essentials</span>
+        <div class="amazon-links" id="amazonLinks"></div>
+      </div>
+
+      <div class="share-row">
+        <span class="share-label">Share your result</span>
+        <div class="share-btns">
+          <button class="share-btn tw" onclick="openShare('tw')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            Twitter
+          </button>
+          <button class="share-btn wa" onclick="openShare('wa')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </button>
+          <button class="share-btn li" onclick="openShare('li')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </button>
+          <button class="share-btn cp" onclick="openShare('cp')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+            Copy link
+          </button>
+        </div>
+      </div>
+      <div class="reset-row">
+        <button class="reset-btn" onclick="resetCalc()">Try another city pair</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how" aria-label="How it works">
+  <h2 class="sec-title">How the numbers work</h2>
+  <div class="how-grid">
+    <div class="hcard"><div class="hn" aria-hidden="true">01</div><div class="ht">Salaries that actually match</div><div class="hb">20 roles, 20 cities, three experience levels. Each role has its own city premium — a Finance Analyst's Mumbai bump is very different from a Software Engineer's.</div></div>
+    <div class="hcard"><div class="hn" aria-hidden="true">02</div><div class="ht">What life actually costs</div><div class="hb">Rent, food, transport and utilities for every city. Frugal, moderate and comfortable tiers because a studio in Koramangala and a 2BHK in Miyapur are not the same calculation.</div></div>
+    <div class="hcard"><div class="hn" aria-hidden="true">03</div><div class="ht">What's left after life</div><div class="hb">Gross salary is a vanity metric. What matters is what's in your account on the 30th. We show you both cities side by side so the answer is obvious.</div></div>
+    <div class="hcard"><div class="hn" aria-hidden="true">04</div><div class="ht">30 seconds, no account</div><div class="hb">needed. Most people check three city pairs before they close the tab.</div></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq" aria-label="Frequently asked questions">
+  <h2 class="sec-title">Things people ask</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Is Bangalore more expensive than Hyderabad? <em class="faq-icon">+</em></button>
+      <div class="faq-a"><div class="faq-a-inner">Yes. A moderate lifestyle in Bangalore costs around ₹37,000/month vs ₹28,000/month in Hyderabad — roughly 32% more expensive. However, Bangalore salaries in tech are typically 10–15% higher, so the net take-home difference depends on your specific role.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">What is the cost of living in Mumbai for a single person? <em class="faq-icon">+</em></button>
+      <div class="faq-a"><div class="faq-a-inner">A single person living a moderate lifestyle in Mumbai spends approximately ₹47,000/month — covering rent (₹28,000), food (₹8,000), transport (₹3,500), utilities (₹2,500) and miscellaneous (₹5,000). This varies significantly by neighbourhood.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Which Indian city has the lowest cost of living? <em class="faq-icon">+</em></button>
+      <div class="faq-a"><div class="faq-a-inner">Among major Indian cities, Bhopal, Indore and Nagpur have the lowest cost of living — a moderate lifestyle costs approximately ₹18,000–20,000/month for a single person. Jaipur and Lucknow are also very affordable.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">How much salary do I need to live comfortably in Bangalore? <em class="faq-icon">+</em></button>
+      <div class="faq-a"><div class="faq-a-inner">To live comfortably as a single person in Bangalore, you need at least ₹75,000–80,000/month gross. This covers a good flat (₹45,000), food (₹13,000), transport (₹6,500), utilities (₹3,800) and leaves a meaningful monthly savings buffer.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Is the salary data accurate? <em class="faq-icon">+</em></button>
+      <div class="faq-a"><div class="faq-a-inner">Salary benchmarks are sourced from AmbitionBox, Glassdoor India and LinkedIn Salary Insights (2025–2026 data). Cost of living figures are sourced from Numbeo and community surveys. Data is indicative — your actual salary depends on company, specific skills, and negotiation. If you notice an inaccuracy, please send us feedback.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Is this tool free? <em class="faq-icon">+</em></button>
+      <div class="faq-a"><div class="faq-a-inner">Yes, completely free. We're supported by affiliate links and display ads — when you find a flat or job through a link on this site, we may earn a small commission at no cost to you.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about" aria-label="About Kaafi Hai">
+  <h2 class="sec-title">India's salary vs<br>cost of living calculator</h2>
+  <div class="about-card">
+    <div class="about-body">
+      <p>Someone gets a job offer in Bangalore. They Google the salary. They Google the rent. They try to do the math in their head and give up. They either take the job blind or overthink it for three weeks. Neither is great.</p>
+      <p><strong>Kaafi Hai</strong> — Hindi for "it is enough" is a single page that does that math in 30 seconds. Pick your role, your cities, your lifestyle. Get the number that matters: what's actually left after you pay for life there.</p>
+      <p>20 cities. 20 roles. Salary premiums that vary by role category, not a blanket multiplier. Lifestyle tiers because a frugal life in Koramangala and a comfortable one in Miyapur are genuinely different calculations.</p>
+      <p>Built by one person, for the millions of Indians making the same calculation every day. Data from AmbitionBox, Glassdoor India, LinkedIn and Numbeo. If it helped, send it to someone who needs it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEEDBACK / CONTACT -->
+<section class="feedback-section" id="feedback" aria-label="Send feedback">
+  <h2 class="sec-title">Something look off?</h2>
+  <div class="feedback-card">
+    <div class="fb-grid">
+      <div class="fb-field">
+        <label class="fb-label" for="fb-name">Your name (optional)</label>
+        <input class="fb-input" type="text" id="fb-name" placeholder="Your name">
+      </div>
+      <div class="fb-field">
+        <label class="fb-label" for="fb-type">Type of feedback</label>
+        <div style="position:relative">
+          <select class="fb-input fb-select" id="fb-type">
+            <option>Wrong salary data</option>
+            <option>Wrong cost of living data</option>
+            <option>Feature request</option>
+            <option>Bug report</option>
+            <option>General suggestion</option>
+            <option>Something else</option>
+          </select>
+          <span style="position:absolute;right:.8rem;top:50%;transform:translateY(-50%);font-size:.8rem;color:var(--ink-3);pointer-events:none">▾</span>
+        </div>
+      </div>
+    </div>
+    <div class="fb-field" style="margin-bottom:1rem">
+      <label class="fb-label" for="fb-msg">Your message</label>
+      <textarea class="fb-input fb-textarea" id="fb-msg" placeholder="e.g. Software Engineer salaries in Pune are higher than shown — I'm getting ₹1.2L at a mid-level role..."></textarea>
+    </div>
+    <button class="fb-submit" onclick="submitFeedback()">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8l10-6-4 6 4 6z"/></svg>
+      Send feedback
+    </button>
+    <div class="fb-success" id="fbSuccess">✓ Thank you — your feedback helps us improve the data for everyone.</div>
+    <p class="fb-note">Your feedback goes directly to the team. Email us at <a href="mailto:hello@kaafihai.in">hello@kaafihai.in</a></p>
+  </div>
+</section>
+
+<section class="support-section" id="support" aria-label="Support Kaafi Hai">
+  <h2 class="sec-title">Keep this alive</h2>
+  <p class="support-intro">Kaafi Hai is free forever but if it helped you make a better decision about a city or job offer — you can help keep it running.</p>
+
+  <div class="support-grid">
+    <div class="support-card featured">
+      <div class="support-icon">☕</div>
+      <div class="support-title">Buy me a coffee</div>
+      <div class="support-desc">One-time support. Every contribution goes directly into keeping the data updated and the site running.</div>
+      <div class="support-price">₹149 — ₹499</div>
+      <a class="support-btn green" href="https://buymeacoffee.com/infinitekoushik" target="_blank" rel="noopener">Support on Buy Me a Coffee →</a>
+    </div>
+    <div class="support-card">
+      <div class="support-icon">🌟</div>
+      <div class="support-title">Monthly supporter</div>
+      <div class="support-desc">Get early access to new cities and roles before they go live, plus a mention in the supporters wall we're building.</div>
+      <div class="support-price">₹249/month</div>
+      <a class="support-btn" href="https://buymeacoffee.com/infinitekoushik/membership" target="_blank" rel="noopener">Become a supporter →</a>
+    </div>
+    <div class="support-card">
+      <div class="support-icon">📊</div>
+      <div class="support-title">Request a city or role</div>
+      <div class="support-desc">We cover 20 cities and 20 roles right now. Support the site and drop your request — we'll prioritise it in the next update.</div>
+      <div class="support-price free">Free — just send feedback</div>
+      <a class="support-btn" href="#feedback" style="background:var(--paper-2);color:var(--ink)">Send a request →</a>
+    </div>
+    <div class="support-card">
+      <div class="support-icon">🔗</div>
+      <div class="support-title">Share it</div>
+      <div class="support-desc">Know someone planning a city move or negotiating a salary? Send them this. That's the most useful thing you can do.</div>
+      <div class="support-price free">Free</div>
+      <button class="support-btn" onclick="openShare('cp')" style="background:var(--paper-2);color:var(--ink)">Copy the link →</button>
+    </div>
+  </div>
+  <p class="support-note">Kaafi Hai will always be free to use. Supporters just help it get better faster. Thank you 🙏<br>Questions? <a href="mailto:hello@kaafihai.in">hello@kaafihai.in</a></p>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a class="footer-logo" href="#home">Kaafi<em>Hai</em></a>
+      <div class="footer-tagline">Compare salaries and cost of living across 20 Indian cities.<br>See what you actually keep after rent, food and transport.</div>
+    </div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="#calc">Calculator</a>
+      <a href="#how">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a href="#about">About</a>
+      <a href="#support">Support</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy-policy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/disclaimer.html">Disclaimer</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <span>Salary data: AmbitionBox, Glassdoor India, LinkedIn · COL data: Numbeo & community surveys · Updated 2026</span>
+    <span>© 2026 Kaafi Hai · All rights reserved · Built for India 🇮🇳 · <a href="#feedback">Report an error</a></span>
+  </div>
+</footer>
+
+<!-- Share overlay -->
+<div class="share-overlay" id="shareOverlay" onclick="closeShare(event)">
+  <div class="share-modal" id="shareModal">
+    <div class="share-card-visual" id="shareCardVisual">
+      <div class="scv-eyebrow" id="scvEyebrow">Kaafi Hai · kaafihai.in</div>
+      <div class="scv-main" id="scvMain"></div>
+      <div class="scv-sub" id="scvSub"></div>
+      <div class="scv-cities" id="scvCities"></div>
+    </div>
+    <div class="share-modal-foot">
+      <div class="share-modal-btns">
+        <a class="smbtn tw" id="smTw" href="#" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          Twitter
+        </a>
+        <a class="smbtn wa" id="smWa" href="#" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+        <a class="smbtn li" id="smLi" href="#" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <button class="smbtn cp" onclick="copyShareLink()">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+          Copy link
+        </button>
+      </div>
+      <button class="share-modal-close" onclick="closeShare()">✕ Close</button>
+    </div>
+  </div>
+</div>
+<div class="copied-toast" id="copiedToast">✓ Link copied to clipboard</div>
+
+<!-- Visually hidden utility -->
+<style>.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
+
+<script>
+// ── DATA ──
+const COL={
+  "Mumbai":{rent:{frugal:15000,moderate:28000,comfortable:55000},food:{frugal:4500,moderate:8000,comfortable:14000},transport:{frugal:1800,moderate:3500,comfortable:7000},utilities:{frugal:1500,moderate:2500,comfortable:4000},misc:{frugal:2500,moderate:5000,comfortable:10000},m:{1:1,2:1.45,3:1.8,4:2.1}},
+  "Delhi":{rent:{frugal:10000,moderate:20000,comfortable:42000},food:{frugal:4000,moderate:7000,comfortable:12000},transport:{frugal:1500,moderate:3000,comfortable:6000},utilities:{frugal:1200,moderate:2200,comfortable:3500},misc:{frugal:2000,moderate:4000,comfortable:8500},m:{1:1,2:1.45,3:1.8,4:2.1}},
+  "Bangalore":{rent:{frugal:12000,moderate:22000,comfortable:45000},food:{frugal:4200,moderate:7500,comfortable:13000},transport:{frugal:1600,moderate:3200,comfortable:6500},utilities:{frugal:1300,moderate:2300,comfortable:3800},misc:{frugal:2200,moderate:4500,comfortable:9000},m:{1:1,2:1.45,3:1.8,4:2.1}},
+  "Hyderabad":{rent:{frugal:9000,moderate:17000,comfortable:35000},food:{frugal:3500,moderate:6500,comfortable:11000},transport:{frugal:1400,moderate:2800,comfortable:5500},utilities:{frugal:1100,moderate:2000,comfortable:3200},misc:{frugal:2000,moderate:4000,comfortable:8000},m:{1:1,2:1.45,3:1.8,4:2.1}},
+  "Pune":{rent:{frugal:9500,moderate:18000,comfortable:37000},food:{frugal:3800,moderate:7000,comfortable:12000},transport:{frugal:1400,moderate:2800,comfortable:5500},utilities:{frugal:1100,moderate:2000,comfortable:3200},misc:{frugal:2000,moderate:4000,comfortable:8000},m:{1:1,2:1.45,3:1.8,4:2.1}},
+  "Chennai":{rent:{frugal:9000,moderate:17000,comfortable:35000},food:{frugal:3500,moderate:6500,comfortable:11000},transport:{frugal:1300,moderate:2600,comfortable:5200},utilities:{frugal:1200,moderate:2100,comfortable:3400},misc:{frugal:1800,moderate:3800,comfortable:7500},m:{1:1,2:1.45,3:1.8,4:2.1}},
+  "Kolkata":{rent:{frugal:7000,moderate:13000,comfortable:28000},food:{frugal:3000,moderate:5500,comfortable:9500},transport:{frugal:1200,moderate:2300,comfortable:4500},utilities:{frugal:1000,moderate:1800,comfortable:2900},misc:{frugal:1500,moderate:3200,comfortable:6500},m:{1:1,2:1.45,3:1.8,4:2.1}},
+  "Ahmedabad":{rent:{frugal:7500,moderate:14000,comfortable:28000},food:{frugal:3200,moderate:5800,comfortable:10000},transport:{frugal:1200,moderate:2400,comfortable:4800},utilities:{frugal:1000,moderate:1800,comfortable:2900},misc:{frugal:1600,moderate:3400,comfortable:6800},m:{1:1,2:1.45,3:1.8,4:2.1}},
+  "Jaipur":{rent:{frugal:6000,moderate:11000,comfortable:22000},food:{frugal:2800,moderate:5000,comfortable:8500},transport:{frugal:1000,moderate:2000,comfortable:4000},utilities:{frugal:900,moderate:1600,comfortable:2600},misc:{frugal:1400,moderate:2800,comfortable:5500},m:{1:1,2:1.45,3:1.8,4:2.1}},
+  "Chandigarh":{rent:{frugal:7000,moderate:13000,comfortable:26000},food:{frugal:3000,moderate:5500,comfortable:9500},transport:{frugal:1100,moderate:2200,comfortable:4500},utilities:{frugal:950,moderate:1700,comfortable:2700},misc:{frugal:1600,moderate:3200,comfortable:6500},m:{1:1,2:1.45,3:1.8,4:2.1}},
+  "Kochi":{rent:{frugal:7500,moderate:14000,comfortable:28000},food:{frugal:3200,moderate:6000,comfortable:10500},transport:{frugal:1100,moderate:2200,comfortable:4500},utilities:{frugal:1000,moderate:1800,comfortable:2900},misc:{frugal:1600,moderate:3300,comfortable:6500},m:{1:1,2:1.45,3:1.8,4:2.1}},
+  "Indore":{rent:{frugal:5500,moderate:10000,comfortable:20000},food:{frugal:2600,moderate:4800,comfortable:8000},transport:{frugal:900,moderate:1800,comfortable:3600},utilities:{frugal:850,moderate:1500,comfortable:2400},misc:{frugal:1300,moderate:2600,comfortable:5200},m:{1:1,2:1.45,3:1.8,4:2.1}},
+  "Nagpur":{rent:{frugal:5500,moderate:10000,comfortable:20000},food:{frugal:2600,moderate:4800,comfortable:8000},transport:{frugal:900,moderate:1800,comfortable:3600},utilities:{frugal:850,moderate:1500,comfortable:2400},misc:{frugal:1200,moderate:2400,comfortable:4800},m:{1:1,2:1.45,3:1.8,4:2.1}},
+  "Surat":{rent:{frugal:7000,moderate:13000,comfortable:26000},food:{frugal:3000,moderate:5500,comfortable:9500},transport:{frugal:1000,moderate:2000,comfortable:4000},utilities:{frugal:950,moderate:1700,comfortable:2700},misc:{frugal:1500,moderate:3000,comfortable:6000},m:{1:1,2:1.45,3:1.8,4:2.1}},
+  "Lucknow":{rent:{frugal:6000,moderate:11000,comfortable:22000},food:{frugal:2700,moderate:5000,comfortable:8500},transport:{frugal:950,moderate:1900,comfortable:3800},utilities:{frugal:850,moderate:1500,comfortable:2500},misc:{frugal:1300,moderate:2600,comfortable:5200},m:{1:1,2:1.45,3:1.8,4:2.1}},
+  "Coimbatore":{rent:{frugal:6500,moderate:12000,comfortable:24000},food:{frugal:2800,moderate:5200,comfortable:9000},transport:{frugal:900,moderate:1800,comfortable:3600},utilities:{frugal:900,moderate:1600,comfortable:2600},misc:{frugal:1400,moderate:2800,comfortable:5500},m:{1:1,2:1.45,3:1.8,4:2.1}},
+  "Visakhapatnam":{rent:{frugal:6000,moderate:11000,comfortable:22000},food:{frugal:2700,moderate:5000,comfortable:8500},transport:{frugal:900,moderate:1800,comfortable:3600},utilities:{frugal:850,moderate:1500,comfortable:2400},misc:{frugal:1300,moderate:2500,comfortable:5000},m:{1:1,2:1.45,3:1.8,4:2.1}},
+  "Bhopal":{rent:{frugal:5000,moderate:9500,comfortable:19000},food:{frugal:2500,moderate:4600,comfortable:7800},transport:{frugal:850,moderate:1700,comfortable:3400},utilities:{frugal:800,moderate:1450,comfortable:2300},misc:{frugal:1200,moderate:2400,comfortable:4800},m:{1:1,2:1.45,3:1.8,4:2.1}},
+  "Vadodara":{rent:{frugal:6500,moderate:12000,comfortable:24000},food:{frugal:2900,moderate:5300,comfortable:9000},transport:{frugal:950,moderate:1900,comfortable:3800},utilities:{frugal:900,moderate:1600,comfortable:2600},misc:{frugal:1400,moderate:2800,comfortable:5500},m:{1:1,2:1.45,3:1.8,4:2.1}},
+  "Thiruvananthapuram":{rent:{frugal:6500,moderate:12000,comfortable:24000},food:{frugal:3000,moderate:5500,comfortable:9500},transport:{frugal:950,moderate:1900,comfortable:3800},utilities:{frugal:950,moderate:1700,comfortable:2700},misc:{frugal:1400,moderate:2800,comfortable:5500},m:{1:1,2:1.45,3:1.8,4:2.1}}
+};
+const SALARIES={
+  "Software Engineer":{junior:55000,mid:100000,senior:180000},
+  "Senior Software Engineer":{junior:90000,mid:150000,senior:250000},
+  "Product Manager":{junior:70000,mid:130000,senior:220000},
+  "Data Scientist":{junior:60000,mid:110000,senior:190000},
+  "Data Analyst":{junior:40000,mid:70000,senior:120000},
+  "DevOps Engineer":{junior:55000,mid:100000,senior:170000},
+  "UX / UI Designer":{junior:35000,mid:65000,senior:110000},
+  "Marketing Manager":{junior:40000,mid:75000,senior:130000},
+  "Sales Manager":{junior:45000,mid:85000,senior:150000},
+  "HR Manager":{junior:35000,mid:60000,senior:100000},
+  "Finance Analyst":{junior:40000,mid:75000,senior:130000},
+  "Chartered Accountant":{junior:45000,mid:80000,senior:150000},
+  "Civil Engineer":{junior:30000,mid:55000,senior:95000},
+  "Mechanical Engineer":{junior:30000,mid:55000,senior:90000},
+  "Doctor (MBBS)":{junior:50000,mid:100000,senior:200000},
+  "Nurse":{junior:20000,mid:35000,senior:55000},
+  "Teacher / Lecturer":{junior:25000,mid:45000,senior:75000},
+  "Graphic Designer":{junior:25000,mid:45000,senior:80000},
+  "Content Writer":{junior:20000,mid:38000,senior:65000},
+  "Operations Manager":{junior:45000,mid:85000,senior:145000}
+};
+// Role-category aware city salary multipliers (Hyderabad=1.0 baseline)
+const ROLE_CAT={
+  "Software Engineer":"tech","Senior Software Engineer":"tech","DevOps Engineer":"tech",
+  "Data Scientist":"tech","Data Analyst":"tech",
+  "Product Manager":"product",
+  "UX / UI Designer":"design","Graphic Designer":"design","Content Writer":"design",
+  "Finance Analyst":"finance","Chartered Accountant":"finance","HR Manager":"finance",
+  "Operations Manager":"finance","Sales Manager":"finance","Marketing Manager":"finance",
+  "Doctor (MBBS)":"medical","Nurse":"medical",
+  "Teacher / Lecturer":"general","Civil Engineer":"general","Mechanical Engineer":"general"
+};
+const CITY_MULT_BY_CAT={
+  tech:{
+    "Mumbai":1.12,"Delhi":1.08,"Bangalore":1.22,"Hyderabad":1.0,"Pune":1.05,
+    "Chennai":1.05,"Kolkata":0.82,"Ahmedabad":0.8,"Jaipur":0.72,"Chandigarh":0.78,
+    "Kochi":0.86,"Indore":0.7,"Nagpur":0.7,"Surat":0.76,"Lucknow":0.71,
+    "Coimbatore":0.78,"Visakhapatnam":0.76,"Bhopal":0.68,"Vadodara":0.76,"Thiruvananthapuram":0.8
+  },
+  product:{
+    "Mumbai":1.18,"Delhi":1.12,"Bangalore":1.2,"Hyderabad":1.0,"Pune":1.06,
+    "Chennai":1.04,"Kolkata":0.8,"Ahmedabad":0.78,"Jaipur":0.72,"Chandigarh":0.76,
+    "Kochi":0.84,"Indore":0.69,"Nagpur":0.69,"Surat":0.74,"Lucknow":0.71,
+    "Coimbatore":0.77,"Visakhapatnam":0.75,"Bhopal":0.67,"Vadodara":0.74,"Thiruvananthapuram":0.79
+  },
+  design:{
+    "Mumbai":1.15,"Delhi":1.1,"Bangalore":1.15,"Hyderabad":1.0,"Pune":1.04,
+    "Chennai":1.02,"Kolkata":0.86,"Ahmedabad":0.84,"Jaipur":0.77,"Chandigarh":0.81,
+    "Kochi":0.87,"Indore":0.74,"Nagpur":0.74,"Surat":0.79,"Lucknow":0.75,
+    "Coimbatore":0.81,"Visakhapatnam":0.79,"Bhopal":0.71,"Vadodara":0.79,"Thiruvananthapuram":0.83
+  },
+  finance:{
+    "Mumbai":1.25,"Delhi":1.15,"Bangalore":1.1,"Hyderabad":1.0,"Pune":1.04,
+    "Chennai":1.02,"Kolkata":0.92,"Ahmedabad":0.9,"Jaipur":0.82,"Chandigarh":0.85,
+    "Kochi":0.88,"Indore":0.78,"Nagpur":0.78,"Surat":0.85,"Lucknow":0.78,
+    "Coimbatore":0.82,"Visakhapatnam":0.8,"Bhopal":0.75,"Vadodara":0.84,"Thiruvananthapuram":0.85
+  },
+  medical:{
+    "Mumbai":1.15,"Delhi":1.12,"Bangalore":1.1,"Hyderabad":1.0,"Pune":1.05,
+    "Chennai":1.08,"Kolkata":1.0,"Ahmedabad":0.95,"Jaipur":0.88,"Chandigarh":0.92,
+    "Kochi":1.02,"Indore":0.85,"Nagpur":0.85,"Surat":0.92,"Lucknow":0.88,
+    "Coimbatore":0.92,"Visakhapatnam":0.9,"Bhopal":0.82,"Vadodara":0.9,"Thiruvananthapuram":0.95
+  },
+  general:{
+    "Mumbai":1.08,"Delhi":1.06,"Bangalore":1.05,"Hyderabad":1.0,"Pune":1.02,
+    "Chennai":1.02,"Kolkata":0.95,"Ahmedabad":0.92,"Jaipur":0.88,"Chandigarh":0.9,
+    "Kochi":0.92,"Indore":0.85,"Nagpur":0.85,"Surat":0.9,"Lucknow":0.86,
+    "Coimbatore":0.88,"Visakhapatnam":0.87,"Bhopal":0.82,"Vadodara":0.88,"Thiruvananthapuram":0.88
+  }
+};
+// Keep a flat CITY_MULT for the hero diff card (uses moderate/general average)
+const CITY_MULT={
+  "Mumbai":1.15,"Delhi":1.1,"Bangalore":1.2,"Hyderabad":1.0,"Pune":1.05,
+  "Chennai":1.05,"Kolkata":0.9,"Ahmedabad":0.88,"Jaipur":0.82,"Chandigarh":0.85,
+  "Kochi":0.9,"Indore":0.78,"Nagpur":0.78,"Surat":0.85,"Lucknow":0.79,
+  "Coimbatore":0.83,"Visakhapatnam":0.81,"Bhopal":0.76,"Vadodara":0.83,"Thiruvananthapuram":0.86
+};
+const TIPS={
+  "Mumbai":["Use local trains — they go everywhere and cost almost nothing.","Look at Thane or Navi Mumbai — half the rent, same connectivity.","Crawford Market and local sabzi mandis for cheap fresh produce."],
+  "Delhi":["Metro smart card every single day — it saves more than you think.","Dwarka and Noida Extension have dramatically cheaper rent.","Lajpat Nagar and Sarojini Nagar for the best budget shopping."],
+  "Bangalore":["Skip Indiranagar/Koramangala for rent — try Whitefield or Electronic City.","Namma Yatri auto app consistently beats Ola/Uber for short trips.","D-Mart wins over Swiggy Instamart every single time on groceries."],
+  "Hyderabad":["Rent is lowest among major metros — Miyapur and LB Nagar still very affordable.","TSRTC + Metro combo dramatically cuts your commute costs.","Secunderabad markets have the cheapest fresh produce in the city."],
+  "Pune":["Hinjewadi and Wakad for tech workers — affordable with solid connectivity.","PMC bus pass is underrated and extremely cheap.","Mandai Market for daily groceries at real market prices."],
+  "Chennai":["MTC passes combined with Ola Bike for last mile is highly effective.","Chromepet and Tambaram for budget rent without losing connectivity.","Saravana Stores for everything non-grocery at half MRP."],
+  "Kolkata":["Most affordable major city in India — your money genuinely goes much further.","Tram + Metro combo is dirt cheap and surprisingly reliable.","New Town for IT workers with solid affordability."],
+  "Ahmedabad":["BRTS bus system is excellent and extremely cheap throughout the city.","SG Highway corridor for affordable modern housing.","Local dhabas over restaurants — food is incredible and dirt cheap."],
+  "Jaipur":["Ridiculously affordable — most people over-rent here. Negotiate hard.","JCTSl city buses are cheap; autos are always negotiable.","Local bazaars for everything — avoid malls completely."],
+  "Chandigarh":["Great quality of life relative to cost — a genuinely smart relocation.","Sectors 40–50 for affordable housing near commercial zones.","Friday vegetable markets for bulk buying at the lowest prices."],
+  "Kochi":["Ernakulam vs Edapally — significant rent difference, similar connectivity.","Water Metro is cheap and scenic for daily commuting.","Weekend farmers markets for the cheapest fresh produce."],
+  "Indore":["One of the cheapest standard of living cities in all of central India.","Sapna Sangeeta Road area for mid-range affordable housing.","56 Dukan area for incredible street food at rock-bottom prices."],
+  "Nagpur":["Orange City has some of India's cheapest Tier-2 real estate.","Wardha Road corridor for affordable modern flats.","City buses are cheap and cover most key areas reliably."],
+  "Surat":["Surprisingly modern lifestyle at a genuine Tier-2 cost.","Udhna and Katargam for very affordable rent options.","Local Surti food is cheap and genuinely world-class."],
+  "Lucknow":["UP capital with good infrastructure at surprisingly low cost.","Gomtinagar extension for affordable modern housing.","Aminabad market for everything at half the city price."],
+  "Coimbatore":["One of South India's lowest costs of living for a real, functioning city.","Ganapathy and Saravanampatti for IT workers at affordable rates.","TNSTC buses are very affordable and reliably on time."],
+  "Visakhapatnam":["Port city with a beach lifestyle at a genuine budget cost.","MVP Colony for affordable good-quality housing.","Rythu Bazar for the cheapest fresh produce in the city."],
+  "Bhopal":["Lakes city with excellent quality of life at very low cost.","Kolar Road area for new, affordable housing developments.","City bus network is extensive and very cheap."],
+  "Vadodara":["Often underestimated — genuinely manageable cost of living.","Fatehgunj and Alkapuri for mid-range affordable flats.","Mandvi area markets for cheap daily necessities."],
+  "Thiruvananthapuram":["Capital city with relatively lower cost than Kochi.","Technopark area for IT workers with well-managed rent levels.","Chalai Market for the cheapest fresh produce in the city."]
+};
+
+const TICKER_CITIES=["Mumbai","Bangalore","Delhi","Hyderabad","Pune","Chennai","Kolkata"];
+let ls='moderate',aiCtrl=null;
+
+function fmt(n){return'₹'+Math.round(n).toLocaleString('en-IN')}
+function getCol(city,lifestyle,mem){
+  const d=COL[city],mult=d.m[mem]||d.m[4];
+  const rent=d.rent[lifestyle]*mult,food=d.food[lifestyle]*mult,
+    transport=d.transport[lifestyle]*mult,utilities=d.utilities[lifestyle]*mult,misc=d.misc[lifestyle]*mult;
+  return{rent,food,transport,utilities,misc,total:rent+food+transport+utilities+misc};
+}
+function getCitySal(role,exp,city){
+  const b=SALARIES[role];
+  if(!b)return 0;
+  const cat=ROLE_CAT[role]||'general';
+  const mult=(CITY_MULT_BY_CAT[cat]||CITY_MULT_BY_CAT.general)[city]||1.0;
+  return Math.round(b[exp]*mult);
+}
+
+function populateAll(){
+  const cities=Object.keys(COL),jobs=Object.keys(SALARIES);
+  const defs={hc1:'Hyderabad',hc2:'Bangalore',city1:'Hyderabad',city2:'Bangalore'};
+  ['hc1','hc2','city1','city2'].forEach(id=>{
+    const el=document.getElementById(id);
+    cities.forEach(c=>{
+      const o=document.createElement('option');
+      o.value=c;o.textContent=c;
+      if(c===defs[id])o.selected=true;
+      el.appendChild(o);
+    });
+  });
+  const jt=document.getElementById('jobTitle');
+  jobs.forEach(j=>{
+    const o=document.createElement('option');
+    o.value=j;o.textContent=j;
+    if(j==='Software Engineer')o.selected=true;
+    jt.appendChild(o);
+  });
+  buildTicker();updateDiff();autoFillSalary();
+}
+
+function buildTicker(){
+  document.getElementById('ticker').innerHTML=
+    TICKER_CITIES.map((c,i)=>{
+      const t=getCol(c,'moderate',1);
+      return`<div class="tp"><span class="tc">${c}</span><span class="tco">${fmt(t.total)}/mo</span></div>`
+        +(i<TICKER_CITIES.length-1?'<span class="tsep" aria-hidden="true">·</span>':'');
+    }).join('');
+}
+
+function autoFillSalary(){
+  const role=document.getElementById('jobTitle').value;
+  const exp=document.getElementById('expLevel').value;
+  const city=document.getElementById('city1').value||'Hyderabad';
+  const sal=getCitySal(role,exp,city);
+  if(sal>0)document.getElementById('salary').value=sal;
+  updateDiff();
+}
+
+function updateDiff(){
+  const cv1=document.getElementById('hc1').value;
+  const cv2=document.getElementById('hc2').value;
+  const d1=getCol(cv1,'moderate',1),d2=getCol(cv2,'moderate',1);
+  const diff=d1.total-d2.total;
+  const numEl=document.getElementById('dnum'),subEl=document.getElementById('dsub');
+  document.getElementById('dcities').textContent=`${cv1} → ${cv2}`;
+  if(diff>0){numEl.textContent=`+${fmt(diff)}`;numEl.className='dnum';subEl.textContent='more in your pocket every month'}
+  else if(diff<0){numEl.textContent=`-${fmt(Math.abs(diff))}`;numEl.className='dnum red';subEl.textContent='less in your pocket every month'}
+  else{numEl.textContent='Same cost';numEl.className='dnum';subEl.textContent='same take-home'}
+  document.getElementById('city1').value=cv1;
+  document.getElementById('city2').value=cv2;
+}
+
+function setLS(btn){document.querySelectorAll('.lpill').forEach(b=>b.classList.remove('on'));btn.classList.add('on');ls=btn.dataset.val}
+
+function scrollToCalc(){
+  document.getElementById('calc').scrollIntoView({behavior:'smooth'});
+  setTimeout(()=>document.getElementById('salary').focus(),600);
+}
+
+function calculate(){
+  const c1=document.getElementById('city1').value,c2=document.getElementById('city2').value;
+  const sal=parseFloat(document.getElementById('salary').value);
+  const mem=document.getElementById('members').value;
+  const role=document.getElementById('jobTitle').value;
+  const exp=document.getElementById('expLevel').value;
+  if(!sal||sal<1000){
+    const inp=document.getElementById('salary');
+    inp.style.borderColor='var(--red)';inp.focus();
+    setTimeout(()=>inp.style.borderColor='',1800);return;
+  }
+  const col1=getCol(c1,ls,mem),col2=getCol(c2,ls,mem);
+  const sal1=sal,sal2=Math.round(sal*(CITY_MULT[c2]||1)/(CITY_MULT[c1]||1));
+  const th1=sal1-col1.total,th2=sal2-col2.total,thDiff=th2-th1;
+  const winner=th2>=th1?c2:c1;
+
+  document.getElementById('salBand').innerHTML=`
+    <div class="sal-col ${winner===c1?'winner':''}">
+      ${winner===c1?'<div class="winner-badge">✓ Better take-home</div>':''}
+      <div class="sal-city-name">${c1}</div>
+      <div class="sal-gross">${fmt(sal1)}<span style="font-size:1rem;letter-spacing:0;color:var(--ink-3);font-family:var(--ff-b);font-weight:400">/mo</span></div>
+      <div class="sal-takehome">After all expenses: <strong>${th1>=0?fmt(th1):'-'+fmt(Math.abs(th1))}</strong></div>
+    </div>
+    <div class="sal-col ${winner===c2?'winner':''}">
+      ${winner===c2?'<div class="winner-badge">✓ Better take-home</div>':''}
+      <div class="sal-city-name">${c2}</div>
+      <div class="sal-gross ${winner===c2?'win':''}">${fmt(sal2)}<span style="font-size:1rem;letter-spacing:0;color:var(--ink-3);font-family:var(--ff-b);font-weight:400">/mo</span></div>
+      <div class="sal-takehome">After all expenses: <strong>${th2>=0?fmt(th2):'-'+fmt(Math.abs(th2))}</strong></div>
+    </div>`;
+
+  const surplus=sal2-col2.total,sp=surplus/sal2;
+  let tier,pill,vhl,vsub;
+  if(sp>=0.3){tier='great';pill='✓ Comfortable';vhl=`You'll live well in ${c2}`;vsub=`${fmt(surplus)} left after all expenses every month`}
+  else if(sp>=0.1){tier='great';pill='✓ Manageable';vhl=`${c2} works on this salary`;vsub=`${fmt(surplus)} monthly buffer — keep an eye on spending`}
+  else if(sp>=0){tier='okay';pill='~ Tight';vhl=`Doable, but you'll feel the pinch`;vsub=`Only ${fmt(surplus)} buffer — one bad month hurts`}
+  else{tier='tight';pill='✗ Shortfall';vhl=`Your salary doesn't cover ${c2}`;vsub=`You need at least ${fmt(Math.round(col2.total*1.15))}/mo to live here`}
+
+  document.getElementById('vband').className='verdict-band '+tier;
+  document.getElementById('vsurf').textContent=surplus>=0?fmt(surplus):`-${fmt(Math.abs(surplus))}`;
+  document.getElementById('vpill').textContent=pill;
+  document.getElementById('vhl').textContent=vhl;
+  document.getElementById('vsub').textContent=vsub;
+
+  const cats=[{k:'rent',l:'Rent'},{k:'food',l:'Food'},{k:'transport',l:'Transport'},{k:'utilities',l:'Utilities'},{k:'misc',l:'Misc'}];
+  document.getElementById('bdrow').innerHTML=cats.map(c=>`
+    <div class="bdc"><div class="bdcat">${c.l}</div><div class="bdamt">${fmt(col2[c.k])}</div><div class="bdnote">${c2} / month</div></div>
+  `).join('')+`<div class="bdc" style="background:var(--paper)"><div class="bdcat">Total</div><div class="bdamt">${fmt(col2.total)}</div><div class="bdnote">${ls} lifestyle</div></div>`;
+
+  document.getElementById('barsLeg').innerHTML=`
+    <div class="li"><div class="ld" style="background:var(--ink)"></div>${c1}</div>
+    <div class="li"><div class="ld" style="background:var(--green)"></div>${c2}</div>`;
+  const maxV=Math.max(...cats.map(c=>Math.max(col1[c.k],col2[c.k])));
+  document.getElementById('barsContent').innerHTML=cats.map(c=>`
+    <div class="bg2">
+      <div class="bgl">${c.l}</div>
+      <div class="bl"><div class="bt"><div class="bf" style="width:${Math.round(col1[c.k]/maxV*100)}%"></div></div><div class="ba">${fmt(col1[c.k])}</div></div>
+      <div class="bl"><div class="bt"><div class="bf c2" style="width:${Math.round(col2[c.k]/maxV*100)}%"></div></div><div class="ba">${fmt(col2[c.k])}</div></div>
+    </div>`).join('');
+
+  document.getElementById('tipsTitle').textContent=`Money moves for ${c2}`;
+  const tips=TIPS[c2]||["Research local markets for best value.","Compare neighbourhoods before committing.","Use public transport where possible."];
+  document.getElementById('tgrid').innerHTML=tips.map((t,i)=>`
+    <div class="tcard"><div class="tico">${['💡','🏠','🛒'][i]}</div><div class="tbody">${t}</div></div>`).join('');
+
+  document.getElementById('affText').textContent=`Ready to make the move to ${c2}?`;
+  document.getElementById('affJobBtn').textContent=`Find ${role} jobs in ${c2} →`;
+  document.getElementById('affJobBtn').href=`https://www.naukri.com/${role.toLowerCase().replace(/[\s/]+/g,'-')}-jobs-in-${c2.toLowerCase()}`;
+  document.getElementById('affFlatBtn').href=`https://www.nobroker.in/${c2.toLowerCase()}/rent`;
+
+  // Amazon affiliate — replace kaafihai-21 with your actual Associate tag after approval
+  const AMZTAG='kaafihai-21';
+  const amzItems=[
+    {label:'Packing boxes',q:'packing+boxes+moving'},
+    {label:'Large luggage bag',q:'large+travel+luggage+bag'},
+    {label:'Storage organiser',q:'home+storage+organiser+set'},
+    {label:'Kitchen starter kit',q:'kitchen+starter+essentials+set'},
+  ];
+  document.getElementById('amazonLinks').innerHTML=amzItems.map(a=>
+    `<a class="amazon-link" href="https://www.amazon.in/s?k=${a.q}&tag=${AMZTAG}" target="_blank" rel="noopener sponsored">📦 ${a.label}</a>`
+  ).join('');
+
+  pushState(c1,c2,role,exp,sal1,mem,ls);
+  const r=document.getElementById('results');
+  r.classList.add('show');
+  setTimeout(()=>r.scrollIntoView({behavior:'smooth',block:'start'}),100);
+  fetchAI(c1,c2,sal1,sal2,col1,col2,surplus,thDiff,ls,mem,role,exp);
+}
+
+async function fetchAI(c1,c2,sal1,sal2,col1,col2,surplus,thDiff,lifestyle,mem,role,exp){
+  const dot=document.getElementById('aiDot'),body=document.getElementById('aiBody');
+  dot.className='ai-dot';
+  body.innerHTML='<span class="dots"><span>.</span><span>.</span><span>.</span></span>';
+  await new Promise(r=>setTimeout(r,900));
+  const expLbl={'junior':'early-career','mid':'mid-level','senior':'senior'}[exp]||exp;
+  const rentDiff=Math.round((col2.rent-col1.rent)/(col1.rent||1)*100);
+  const salDiff=Math.round((sal2-sal1)/(sal1||1)*100);
+  const absDiff=fmt(Math.abs(thDiff));
+  const sipVal=fmt(Math.round(Math.abs(thDiff)*0.5));
+  const neededSal=fmt(Math.round(col2.total*1.25));
+  let analysis='';
+  if(thDiff>=0){
+    if(rentDiff>20){
+      analysis=`Moving from <strong>${c1} to ${c2}</strong> puts an extra <strong>${absDiff}/month</strong> in your pocket as a ${expLbl} ${role} — ${c2} pays ${salDiff>0?salDiff+'% more':'similarly'} but the real win is that the overall cost structure still leaves you ahead despite ${c2}'s higher rent. Put at least <strong>${sipVal}/month</strong> into a SIP or Nifty 50 index fund from day one — that compounding is what actually changes your financial picture over 5 years. Build a 3-month emergency fund first, then invest the rest aggressively.`;
+    } else {
+      analysis=`As a ${expLbl} ${role}, <strong>${c2} beats ${c1}</strong> by <strong>${absDiff}/month</strong> in real take-home after all living costs — ${c2}'s ${salDiff>0?'higher salary market':'lower cost structure'} is doing the heavy lifting here. The smart move is to automate <strong>${sipVal}/month</strong> into a Nifty 50 index fund from your very first paycheck in ${c2} — future you will thank you. Negotiate your offer hard before accepting; ${c2} roles at your level have more room than most people realise.`;
+    }
+  } else {
+    if(Math.abs(thDiff)>15000){
+      analysis=`The numbers are clear — staying in <strong>${c1} saves you ${absDiff}/month</strong> compared to moving to ${c2} as a ${expLbl} ${role}, because ${c2}'s cost of living${col2.rent>col1.rent*1.3?' (especially rent)':''} outpaces the salary bump significantly. If ${c2} is still your goal, you need at least <strong>${neededSal}/month gross</strong> to genuinely come out ahead after expenses. Look at satellite areas of ${c2} to cut rent by 30–40% — that alone can shift the math in your favour.`;
+    } else {
+      analysis=`Moving to <strong>${c2} costs ${absDiff}/month more</strong> in real terms for a ${expLbl} ${role} — not a dealbreaker, but not neutral either. You need <strong>${neededSal}/month gross</strong> in ${c2} to come out ahead after all living costs. If the role offers meaningful career acceleration that ${c1} doesn't, it can still be worth it — but go in with eyes open and negotiate accordingly.`;
+    }
+  }
+  dot.className='ai-dot done';
+  body.innerHTML=analysis;
+  // PLACEHOLDER_END
+}
+
+function resetCalc(){
+  document.getElementById('results').classList.remove('show');
+  document.getElementById('calc').scrollIntoView({behavior:'smooth'});
+}
+
+function toggleFaq(btn){
+  const item=btn.closest('.faq-item');
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!isOpen){item.classList.add('open');btn.setAttribute('aria-expanded','true')}
+  else btn.setAttribute('aria-expanded','false');
+}
+
+function submitFeedback(){
+  const msg=document.getElementById('fb-msg').value.trim();
+  if(!msg){document.getElementById('fb-msg').focus();return}
+  // Sends to Formspree — replace YOUR_FORM_ID with your actual ID from formspree.io (free)
+  const type=document.getElementById('fb-type').value;
+  const name=document.getElementById('fb-name').value||'Anonymous';
+  const mailtoLink=`mailto:hello@kaafihai.in?subject=Feedback: ${encodeURIComponent(type)}&body=${encodeURIComponent('From: '+name+'\n\n'+msg)}`;
+  window.location.href=mailtoLink;
+  document.getElementById('fbSuccess').classList.add('show');
+  document.getElementById('fb-msg').value='';
+  document.getElementById('fb-name').value='';
+}
+
+// ── URL STATE ──
+function pushState(c1,c2,role,exp,sal,mem,lifestyle){
+  try{
+    const p=new URLSearchParams({from:c1,to:c2,role,exp,sal:Math.round(sal),mem,ls:lifestyle});
+    history.replaceState(null,'',`?${p.toString()}`);
+  }catch(e){}
+}
+
+function restoreFromURL(){
+  try{
+    const p=new URLSearchParams(location.search);
+    if(!p.get('from')||!p.get('to'))return;
+    const c1=p.get('from'),c2=p.get('to'),role=p.get('role'),
+      exp=p.get('exp'),sal=p.get('sal'),mem=p.get('mem'),lifestyle=p.get('ls');
+    if(COL[c1])document.getElementById('city1').value=c1;
+    if(COL[c2])document.getElementById('city2').value=c2;
+    if(COL[c1])document.getElementById('hc1').value=c1;
+    if(COL[c2])document.getElementById('hc2').value=c2;
+    if(SALARIES[role])document.getElementById('jobTitle').value=role;
+    if(exp)document.getElementById('expLevel').value=exp;
+    if(sal)document.getElementById('salary').value=sal;
+    if(mem)document.getElementById('members').value=mem;
+    if(lifestyle){
+      ls=lifestyle;
+      document.querySelectorAll('.lpill').forEach(b=>{
+        b.classList.toggle('on',b.dataset.val===lifestyle);
+      });
+    }
+    updateDiff();
+    setTimeout(()=>calculate(),300);
+  }catch(e){}
+}
+
+// ── SHARE ──
+let shareData={};
+
+function buildShareURL(){
+  const c1=document.getElementById('city1').value;
+  const c2=document.getElementById('city2').value;
+  const role=document.getElementById('jobTitle').value;
+  const exp=document.getElementById('expLevel').value;
+  const sal=document.getElementById('salary').value;
+  const mem=document.getElementById('members').value;
+  const p=new URLSearchParams({from:c1,to:c2,role,exp,sal,mem,ls});
+  return`https://kaafihai.in/?${p.toString()}`;
+}
+
+function openShare(platform){
+  const c1=document.getElementById('city1').value;
+  const c2=document.getElementById('city2').value;
+  const role=document.getElementById('jobTitle').value;
+  const exp=document.getElementById('expLevel').value;
+  const sal1=parseFloat(document.getElementById('salary').value)||0;
+  const sal2=Math.round(sal1*(CITY_MULT[c2]||1)/(CITY_MULT[c1]||1));
+  const col2=getCol(c2,ls,document.getElementById('members').value);
+  const th1=sal1-getCol(c1,ls,document.getElementById('members').value).total;
+  const th2=sal2-col2.total;
+  const diff=th2-th1;
+  const url=buildShareURL();
+  const better=diff>=0?c2:c1;
+  const diffAbs=fmt(Math.abs(diff));
+
+  // Build card
+  const card=document.getElementById('shareCardVisual');
+  const mainEl=document.getElementById('scvMain');
+  const subEl=document.getElementById('scvSub');
+  document.getElementById('scvCities').textContent=`${c1} → ${c2}`;
+  if(diff>=0){
+    card.style.background='var(--green)';
+    mainEl.textContent=`+${diffAbs}/mo more in ${c2}`;
+    subEl.textContent=`As a ${exp} ${role} — moving pays off`;
+  }else{
+    card.style.background='var(--red)';
+    mainEl.textContent=`${diffAbs}/mo less in ${c2}`;
+    subEl.textContent=`As a ${exp} ${role} — staying pays off`;
+  }
+
+  const text=diff>=0
+    ?`As a ${exp} ${role}, I'd earn ${diffAbs}/month MORE in ${c2} than ${c1} after all living costs. Check your city pair 👇`
+    :` As a ${exp} ${role}, moving to ${c2} would cost me ${diffAbs}/month MORE after living costs. This calculator saved me from a bad move 👇`;
+
+  const twText=encodeURIComponent(`${text}\n${url}\n\n#India #Salary #CareerMove`);
+  const waText=encodeURIComponent(`${text}\n\n${url}`);
+  const liText=encodeURIComponent(text);
+
+  document.getElementById('smTw').href=`https://twitter.com/intent/tweet?text=${twText}`;
+  document.getElementById('smWa').href=`https://wa.me/?text=${waText}`;
+  document.getElementById('smLi').href=`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}&summary=${liText}`;
+
+  shareData={url,text};
+
+  if(platform==='cp'){
+    copyShareLink();return;
+  }
+  document.getElementById('shareOverlay').classList.add('show');
+  document.body.style.overflow='hidden';
+
+  if(platform==='tw')setTimeout(()=>document.getElementById('smTw').click(),200);
+  if(platform==='wa')setTimeout(()=>document.getElementById('smWa').click(),200);
+  if(platform==='li')setTimeout(()=>document.getElementById('smLi').click(),200);
+}
+
+function closeShare(e){
+  if(e&&e.target!==document.getElementById('shareOverlay'))return;
+  document.getElementById('shareOverlay').classList.remove('show');
+  document.body.style.overflow='';
+}
+
+function copyShareLink(){
+  const url=shareData.url||buildShareURL();
+  navigator.clipboard.writeText(url).then(()=>{
+    const t=document.getElementById('copiedToast');
+    t.classList.add('show');
+    setTimeout(()=>t.classList.remove('show'),2200);
+    document.getElementById('shareOverlay').classList.remove('show');
+    document.body.style.overflow='';
+  }).catch(()=>{
+    // fallback
+    const inp=document.createElement('input');
+    inp.value=url;document.body.appendChild(inp);
+    inp.select();document.execCommand('copy');
+    document.body.removeChild(inp);
+    const t=document.getElementById('copiedToast');
+    t.classList.add('show');
+    setTimeout(()=>t.classList.remove('show'),2200);
+  });
+}
+
+// ── CURSOR ──
+const cur=document.getElementById('cur'),ring=document.getElementById('curring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+(function animCur(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animCur)})();
+
+// ── MAGNETIC CURSOR TRAIL ──
+(function initTrail(){
+  if(window.matchMedia('(pointer:coarse)').matches)return; // skip on touch
+  const COUNT=10;
+  const dots=[];
+  const positions=Array.from({length:COUNT},()=>({x:0,y:0}));
+  for(let i=0;i<COUNT;i++){
+    const d=document.createElement('div');
+    d.className='trail-dot';
+    const size=Math.round(6-i*0.45);
+    const alpha=0.55-i*0.045;
+    d.style.cssText=`width:${size}px;height:${size}px;background:rgba(26,92,58,${alpha});z-index:${9997-i}`;
+    document.body.appendChild(d);
+    dots.push(d);
+  }
+  let tmx=0,tmy=0;
+  document.addEventListener('mousemove',e=>{tmx=e.clientX;tmy=e.clientY});
+  (function animTrail(){
+    positions[0].x+=(tmx-positions[0].x)*.35;
+    positions[0].y+=(tmy-positions[0].y)*.35;
+    for(let i=1;i<COUNT;i++){
+      positions[i].x+=(positions[i-1].x-positions[i].x)*.32;
+      positions[i].y+=(positions[i-1].y-positions[i].y)*.32;
+    }
+    dots.forEach((d,i)=>{
+      d.style.left=positions[i].x+'px';
+      d.style.top=positions[i].y+'px';
+    });
+    requestAnimationFrame(animTrail);
+  })();
+})();
+
+// ── 3D FLOATING CITY CARDS ──
+(function initCityCards(){
+  const stage=document.getElementById('cityCardsStage');
+  if(!stage)return;
+
+  // Cards show salary benchmarks — different from the ticker which shows COL
+  // Positioned away from center so they don't overlap headline text
+  // Each card shows a different role so they're genuinely unique
+  const CARDS=[
+    {name:'Mumbai',   role:'Finance Analyst',    left:'4%',   top:'14%', depth:40, delay:0},
+    {name:'Bangalore',role:'Software Engineer',  left:'76%',  top:'10%', depth:80, delay:150},
+    {name:'Delhi',    role:'Product Manager',    left:'8%',   top:'68%', depth:20, delay:250},
+    {name:'Hyderabad',role:'Data Scientist',     left:'74%',  top:'65%', depth:60, delay:100},
+    {name:'Pune',     role:'DevOps Engineer',    left:'82%',  top:'38%', depth:30, delay:350},
+    {name:'Chennai',  role:'UX / UI Designer',   left:'2%',   top:'40%', depth:55, delay:200},
+  ];
+
+  const els=[];
+  CARDS.forEach(c=>{
+    const el=document.createElement('div');
+    el.className='city-card-3d';
+    el.dataset.city=c.name;
+    // Start invisible, fade in after load
+    const midSal=getCitySal(c.role,'mid',c.name);
+    const salStr=midSal>0?'₹'+(midSal/1000).toFixed(0)+'k/mo':'';
+    el.style.cssText=`left:${c.left};top:${c.top};opacity:0;position:absolute;will-change:transform`;
+    el.innerHTML=`<div class="cc-inner" style="position:relative">
+      <div class="cc-pulse"></div>
+      <div class="cc-name">${c.name}</div>
+      <div class="cc-val">${c.role.split(' ')[0]} · ${salStr}</div>
+    </div>`;
+    stage.appendChild(el);
+    // Staggered fade in
+    setTimeout(()=>{
+      el.style.transition='opacity 700ms var(--ease)';
+      el.style.opacity='1';
+    },c.delay+500);
+    els.push({el,depth:c.depth,initRot:c.initRot});
+  });
+
+  // Mouse parallax with clamped rotation — NO flipping
+  let hx=0,hy=0,thx=0,thy=0;
+  document.addEventListener('mousemove',e=>{
+    thx=(e.clientX/window.innerWidth-.5);
+    thy=(e.clientY/window.innerHeight-.5);
+  });
+
+  (function animCards(){
+    hx+=(thx-hx)*.055;
+    hy+=(thy-hy)*.055;
+    els.forEach(({el,depth})=>{
+      const factor=depth/80;
+      const tx=hx*28*factor;
+      const ty=hy*16*factor;
+      // perspective() inline = no stage perspective conflict, no backflip
+      const rx=Math.max(-5,Math.min(5,hy*6));
+      const ry=Math.max(-5,Math.min(5,hx*6));
+      el.style.transform=`perspective(800px) translate(${tx}px,${ty}px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+    });
+    requestAnimationFrame(animCards);
+  })();
+
+  // Highlight when cities selected
+  function highlight(){
+    const c1=document.getElementById('hc1')?.value;
+    const c2=document.getElementById('hc2')?.value;
+    els.forEach(({el})=>{
+      el.classList.toggle('active',el.dataset.city===c1||el.dataset.city===c2);
+    });
+  }
+  document.getElementById('hc1')?.addEventListener('change',highlight);
+  document.getElementById('hc2')?.addEventListener('change',highlight);
+  document.getElementById('city1')?.addEventListener('change',highlight);
+  document.getElementById('city2')?.addEventListener('change',highlight);
+  setTimeout(highlight,700);
+})();
+
+// ── PARTICLE FIELD ──
+(function initParticles(){
+  const canvas=document.getElementById('particleCanvas');
+  if(!canvas)return;
+  const ctx=canvas.getContext('2d');
+  let W,H,particles=[];
+
+  function resize(){
+    W=canvas.width=window.innerWidth;
+    H=canvas.height=window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize',()=>{resize();initP()});
+
+  function initP(){
+    const COUNT=Math.min(55,Math.floor(W*H/22000));
+    particles=Array.from({length:COUNT},()=>({
+      x:Math.random()*W,y:Math.random()*H,
+      vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,
+      r:Math.random()*2+1,
+      alpha:Math.random()*.5+.15
+    }));
+  }
+  initP();
+
+  let pmx=W/2,pmy=H/2;
+  document.addEventListener('mousemove',e=>{pmx=e.clientX;pmy=e.clientY});
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    const isDark=document.documentElement.getAttribute('data-theme')==='dark';
+    const baseColor=isDark?'255,255,255':'11,11,11';
+    const lineColor=isDark?'45,158,98':'26,92,58';
+
+    particles.forEach((p,i)=>{
+      // gentle mouse attraction
+      const dx=pmx-p.x,dy=pmy-p.y;
+      const dist=Math.sqrt(dx*dx+dy*dy);
+      if(dist<180){p.vx+=dx/dist*.012;p.vy+=dy/dist*.012}
+      // dampen
+      p.vx*=.985;p.vy*=.985;
+      p.x+=p.vx;p.y+=p.vy;
+      // wrap
+      if(p.x<0)p.x=W;if(p.x>W)p.x=0;
+      if(p.y<0)p.y=H;if(p.y>H)p.y=0;
+
+      // draw dot
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle=`rgba(${baseColor},${p.alpha})`;
+      ctx.fill();
+
+      // connect close particles with green lines
+      for(let j=i+1;j<particles.length;j++){
+        const p2=particles[j];
+        const d=Math.sqrt((p.x-p2.x)**2+(p.y-p2.y)**2);
+        if(d<130){
+          ctx.beginPath();
+          ctx.moveTo(p.x,p.y);ctx.lineTo(p2.x,p2.y);
+          ctx.strokeStyle=`rgba(${lineColor},${(1-d/130)*.12})`;
+          ctx.lineWidth=.8;
+          ctx.stroke();
+        }
+      }
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ── FLOATING ₹ ──
+(function initRupees(){
+  const sc=document.body;
+  function spawnR(){
+    const el=document.createElement('div');el.className='rf';el.textContent='₹';
+    const sz=Math.random()*50+22;
+    el.style.cssText=`font-size:${sz}px;position:fixed;left:${Math.random()*100}%;top:${78+Math.random()*18}%;animation-duration:${8+Math.random()*9}s;animation-delay:${-Math.random()*5}s;pointer-events:none;z-index:0`;
+    document.body.appendChild(el);
+    setTimeout(()=>el.remove(),(17+Math.random()*9)*1000);
+  }
+  for(let i=0;i<6;i++)setTimeout(spawnR,i*1200);
+  setInterval(spawnR,3200);
+})();
+
+// ── DARK MODE ──
+function toggleDark(){
+  const isDark=document.documentElement.getAttribute('data-theme')==='dark';
+  document.documentElement.setAttribute('data-theme',isDark?'light':'dark');
+  document.getElementById('dmBtn').textContent=isDark?'🌙':'☀️';
+  try{localStorage.setItem('kh-theme',isDark?'light':'dark')}catch(e){}
+}
+(function initTheme(){
+  try{
+    const saved=localStorage.getItem('kh-theme');
+    const prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme=saved||(prefersDark?'dark':'light');
+    if(theme==='dark'){
+      document.documentElement.setAttribute('data-theme','dark');
+      const btn=document.getElementById('dmBtn');
+      if(btn)btn.textContent='☀️';
+    }
+  }catch(e){}
+})();
+
+populateAll();
+restoreFromURL();
+</script>
+</body>
+</html>
