@@ -12,7 +12,7 @@
 <meta name="author" content="Kaafi Hai">
 <link rel="canonical" href="https://kaafihai.in/">
 
-<!-- Open Graph — WhatsApp, LinkedIn, Facebook previews -->
+<!-- Open Graph - WhatsApp, LinkedIn, Facebook previews -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Kaafi Hai - Will you actually earn more in that city?">
 <meta property="og:description" content="Compare salaries and cost of living across 20 Indian cities. See your real take-home after rent, food and transport. Free and instant.">
@@ -33,6 +33,16 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Kaafi Hai",
+  "url": "https://kaafihai.in",
+  "logo": "https://kaafihai.in/logo.png",
+  "sameAs": []
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Kaafi Hai",
   "description": "India salary and cost of living calculator. Compare take-home pay across 20 Indian cities after rent, food and transport.",
@@ -45,7 +55,7 @@
 }
 </script>
 
-<!-- Schema: FAQ — gets Google rich results -->
+<!-- Schema: FAQ - gets Google rich results -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -59,16 +69,16 @@
 }
 </script>
 
-<!-- Favicon (inline SVG as data URI — no extra file needed) -->
+<!-- Favicon (inline SVG as data URI - no extra file needed) -->
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
-<!-- Google Analytics — replace G-XXXXXXXXXX with your Measurement ID -->
+<!-- Google Analytics - replace G-XXXXXXXXXX with your Measurement ID -->
 <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
 
-<!-- Cuelinks affiliate — replace XXXXXXXX with your publisher ID from cuelinks.com -->
+<!-- Cuelinks affiliate - replace XXXXXXXX with your publisher ID from cuelinks.com -->
 <!-- <script src="//cl.cuelinks.com/cljs/XXXXXXXX.js" async></script> -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -420,6 +430,7 @@ footer{border-top:1px solid var(--paper-3);padding:3rem 2rem 2rem;position:relat
 .amazon-links{display:flex;gap:.5rem;flex-wrap:wrap}
 .amazon-link{display:inline-flex;align-items:center;gap:.35rem;background:var(--white);border:1px solid var(--paper-3);border-radius:6px;padding:.35rem .75rem;font-size:.75rem;font-weight:500;color:var(--ink-2);text-decoration:none;transition:all 150ms;white-space:nowrap}
 .amazon-link:hover{border-color:var(--ink-3);color:var(--ink);text-decoration:none}
+@media(max-width:900px){.city-cards-stage{display:none}}
 @media(max-width:640px){
   .support-grid{grid-template-columns:1fr}
   .amazon-strip{padding:1rem 1.25rem;flex-direction:column;align-items:flex-start}
@@ -446,8 +457,9 @@ footer{border-top:1px solid var(--paper-3);padding:3rem 2rem 2rem;position:relat
   body{cursor:auto}
   #cur,#curring{display:none}
   .trail-dot{display:none}
-  .city-card-3d{opacity:.0!important}
+  .city-card-3d{opacity:0!important}
   .city-cards-stage{display:none}
+  #particleCanvas{opacity:.15}
   #particleCanvas{opacity:.2}
   #cur,#curring{display:none}
   .hero{min-height:auto;padding:3rem 1.25rem 3rem}
@@ -701,7 +713,7 @@ footer{border-top:1px solid var(--paper-3);padding:3rem 2rem 2rem;position:relat
   <h2 class="sec-title">How the numbers work</h2>
   <div class="how-grid">
     <div class="hcard"><div class="hn" aria-hidden="true">01</div><div class="ht">Salaries that actually match</div><div class="hb">20 roles, 20 cities, three experience levels. Each role has its own city premium - a Finance Analyst's Mumbai bump is very different from a Software Engineer's.</div></div>
-    <div class="hcard"><div class="hn" aria-hidden="true">02</div><div class="ht">What life actually costs</div><div class="hb">Rent, food, transport and utilities for every city. Frugal, moderate and comfortable tiers because a studio in Koramangala and a 2BHK in Miyapur are not the same calculation.</div></div>
+    <div class="hcard"><div class="hn" aria-hidden="true">02</div><div class="ht">What life actually costs</div><div class="hb">Rent, food, transport and utilities for every city. Frugal, moderate and comfortable tiers - because a studio in Koramangala and a 2BHK in Miyapur are not the same calculation.</div></div>
     <div class="hcard"><div class="hn" aria-hidden="true">03</div><div class="ht">What's left after life</div><div class="hb">Gross salary is a vanity metric. What matters is what's in your account on the 30th. We show you both cities side by side so the answer is obvious.</div></div>
     <div class="hcard"><div class="hn" aria-hidden="true">04</div><div class="ht">30 seconds, no account</div><div class="hb">No registration, no email, no paywall. Just an answer. Most people check three city pairs before they close the tab.</div></div>
   </div>
@@ -729,11 +741,11 @@ footer{border-top:1px solid var(--paper-3);padding:3rem 2rem 2rem;position:relat
     </div>
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Is the salary data accurate? <em class="faq-icon">+</em></button>
-      <div class="faq-a"><div class="faq-a-inner">Salary benchmarks are sourced from AmbitionBox, Glassdoor India and LinkedIn Salary Insights (2025–2026 data). Cost of living figures are sourced from Numbeo and community surveys. Data is indicative - your actual salary depends on company, specific skills and negotiation. If you notice an inaccuracy, please send us feedback.</div></div>
+      <div class="faq-a"><div class="faq-a-inner">Salary benchmarks are sourced from AmbitionBox, Glassdoor India and LinkedIn Salary Insights (2025–2026 data). Cost of living figures are sourced from Numbeo and community surveys. Data is indicative - your actual salary depends on company, specific skills, and negotiation. If you notice an inaccuracy, please send us feedback.</div></div>
     </div>
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Is this tool free? <em class="faq-icon">+</em></button>
-      <div class="faq-a"><div class="faq-a-inner">Yes, completely free. No login, no email, no paywall. We're supported by affiliate links and display ads when you find a flat or job through a link on this site, we may earn a small commission at no cost to you.</div></div>
+      <div class="faq-a"><div class="faq-a-inner">Yes, completely free. No login, no email, no paywall. We're supported by affiliate links and display ads - when you find a flat or job through a link on this site, we may earn a small commission at no cost to you.</div></div>
     </div>
   </div>
 </section>
@@ -744,9 +756,9 @@ footer{border-top:1px solid var(--paper-3);padding:3rem 2rem 2rem;position:relat
   <div class="about-card">
     <div class="about-body">
       <p>Someone gets a job offer in Bangalore. They Google the salary. They Google the rent. They try to do the math in their head and give up. They either take the job blind or overthink it for three weeks. Neither is great.</p>
-      <p><strong>Kaafi Hai</strong> — Hindi for "is it enough?" is a single page that does that math in 30 seconds. Pick your role, your cities, your lifestyle. Get the number that matters: what's actually left after you pay for life there.</p>
+      <p><strong>Kaafi Hai</strong> - Hindi for "is it enough?" - is a single page that does that math in 30 seconds. Pick your role, your cities, your lifestyle. Get the number that matters: what's actually left after you pay for life there.</p>
       <p>20 cities. 20 roles. Salary premiums that vary by role category, not a blanket multiplier. Lifestyle tiers because a frugal life in Koramangala and a comfortable one in Miyapur are genuinely different calculations.</p>
-      <p>Built by one person, for the millions of Indians making the same calculation every day. Data from AmbitionBox, Glassdoor India, LinkedIn and Numbeo. If it helped, send it to someone who needs it.</p>
+      <p>Built by one person, for the millions of Indians making the same calculation every day. Data from AmbitionBox, Glassdoor India, LinkedIn and Numbeo. If it helped - send it to someone who needs it.</p>
     </div>
   </div>
 </section>
@@ -777,7 +789,7 @@ footer{border-top:1px solid var(--paper-3);padding:3rem 2rem 2rem;position:relat
     </div>
     <div class="fb-field" style="margin-bottom:1rem">
       <label class="fb-label" for="fb-msg">Your message</label>
-      <textarea class="fb-input fb-textarea" id="fb-msg" placeholder="e.g. Software Engineer salaries in Pune are higher than shown — I'm getting ₹1.2L at a mid-level role..."></textarea>
+      <textarea class="fb-input fb-textarea" id="fb-msg" placeholder="e.g. Software Engineer salaries in Pune are higher than shown - I'm getting ₹1.2L at a mid-level role..."></textarea>
     </div>
     <button class="fb-submit" onclick="submitFeedback()">
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8l10-6-4 6 4 6z"/></svg>
@@ -797,7 +809,7 @@ footer{border-top:1px solid var(--paper-3);padding:3rem 2rem 2rem;position:relat
       <div class="support-icon">☕</div>
       <div class="support-title">Buy me a coffee</div>
       <div class="support-desc">One-time support. Every contribution goes directly into keeping the data updated and the site running.</div>
-      <div class="support-price">₹149 — ₹499</div>
+      <div class="support-price">₹149 - ₹499</div>
       <a class="support-btn green" href="https://buymeacoffee.com/infinitekoushik" target="_blank" rel="noopener">Support on Buy Me a Coffee →</a>
     </div>
     <div class="support-card">
@@ -993,15 +1005,15 @@ const CITY_MULT={
 const TIPS={
   "Mumbai":["Use local trains - they go everywhere and cost almost nothing.","Look at Thane or Navi Mumbai - half the rent, same connectivity.","Crawford Market and local sabzi mandis for cheap fresh produce."],
   "Delhi":["Metro smart card every single day - it saves more than you think.","Dwarka and Noida Extension have dramatically cheaper rent.","Lajpat Nagar and Sarojini Nagar for the best budget shopping."],
-  "Bangalore":["Skip Indiranagar/Koramangala for rent — try Whitefield or Electronic City.","Namma Yatri auto app consistently beats Ola/Uber for short trips.","D-Mart wins over Swiggy Instamart every single time on groceries."],
-  "Hyderabad":["Rent is lowest among major metros — Miyapur and LB Nagar still very affordable.","TSRTC + Metro combo dramatically cuts your commute costs.","Secunderabad markets have the cheapest fresh produce in the city."],
-  "Pune":["Hinjewadi and Wakad for tech workers — affordable with solid connectivity.","PMC bus pass is underrated and extremely cheap.","Mandai Market for daily groceries at real market prices."],
+  "Bangalore":["Skip Indiranagar/Koramangala for rent - try Whitefield or Electronic City.","Namma Yatri auto app consistently beats Ola/Uber for short trips.","D-Mart wins over Swiggy Instamart every single time on groceries."],
+  "Hyderabad":["Rent is lowest among major metros - Miyapur and LB Nagar still very affordable.","TSRTC + Metro combo dramatically cuts your commute costs.","Secunderabad markets have the cheapest fresh produce in the city."],
+  "Pune":["Hinjewadi and Wakad for tech workers - affordable with solid connectivity.","PMC bus pass is underrated and extremely cheap.","Mandai Market for daily groceries at real market prices."],
   "Chennai":["MTC passes combined with Ola Bike for last mile is highly effective.","Chromepet and Tambaram for budget rent without losing connectivity.","Saravana Stores for everything non-grocery at half MRP."],
-  "Kolkata":["Most affordable major city in India — your money genuinely goes much further.","Tram + Metro combo is dirt cheap and surprisingly reliable.","New Town for IT workers with solid affordability."],
-  "Ahmedabad":["BRTS bus system is excellent and extremely cheap throughout the city.","SG Highway corridor for affordable modern housing.","Local dhabas over restaurants — food is incredible and dirt cheap."],
-  "Jaipur":["Ridiculously affordable — most people over-rent here. Negotiate hard.","JCTSl city buses are cheap; autos are always negotiable.","Local bazaars for everything — avoid malls completely."],
-  "Chandigarh":["Great quality of life relative to cost — a genuinely smart relocation.","Sectors 40–50 for affordable housing near commercial zones.","Friday vegetable markets for bulk buying at the lowest prices."],
-  "Kochi":["Ernakulam vs Edapally — significant rent difference, similar connectivity.","Water Metro is cheap and scenic for daily commuting.","Weekend farmers markets for the cheapest fresh produce."],
+  "Kolkata":["Most affordable major city in India - your money genuinely goes much further.","Tram + Metro combo is dirt cheap and surprisingly reliable.","New Town for IT workers with solid affordability."],
+  "Ahmedabad":["BRTS bus system is excellent and extremely cheap throughout the city.","SG Highway corridor for affordable modern housing.","Local dhabas over restaurants - food is incredible and dirt cheap."],
+  "Jaipur":["Ridiculously affordable - most people over-rent here. Negotiate hard.","JCTSl city buses are cheap; autos are always negotiable.","Local bazaars for everything - avoid malls completely."],
+  "Chandigarh":["Great quality of life relative to cost - a genuinely smart relocation.","Sectors 40–50 for affordable housing near commercial zones.","Friday vegetable markets for bulk buying at the lowest prices."],
+  "Kochi":["Ernakulam vs Edapally - significant rent difference, similar connectivity.","Water Metro is cheap and scenic for daily commuting.","Weekend farmers markets for the cheapest fresh produce."],
   "Indore":["One of the cheapest standard of living cities in all of central India.","Sapna Sangeeta Road area for mid-range affordable housing.","56 Dukan area for incredible street food at rock-bottom prices."],
   "Nagpur":["Orange City has some of India's cheapest Tier-2 real estate.","Wardha Road corridor for affordable modern flats.","City buses are cheap and cover most key areas reliably."],
   "Surat":["Surprisingly modern lifestyle at a genuine Tier-2 cost.","Udhna and Katargam for very affordable rent options.","Local Surti food is cheap and genuinely world-class."],
@@ -1009,7 +1021,7 @@ const TIPS={
   "Coimbatore":["One of South India's lowest costs of living for a real, functioning city.","Ganapathy and Saravanampatti for IT workers at affordable rates.","TNSTC buses are very affordable and reliably on time."],
   "Visakhapatnam":["Port city with a beach lifestyle at a genuine budget cost.","MVP Colony for affordable good-quality housing.","Rythu Bazar for the cheapest fresh produce in the city."],
   "Bhopal":["Lakes city with excellent quality of life at very low cost.","Kolar Road area for new, affordable housing developments.","City bus network is extensive and very cheap."],
-  "Vadodara":["Often underestimated — genuinely manageable cost of living.","Fatehgunj and Alkapuri for mid-range affordable flats.","Mandvi area markets for cheap daily necessities."],
+  "Vadodara":["Often underestimated - genuinely manageable cost of living.","Fatehgunj and Alkapuri for mid-range affordable flats.","Mandvi area markets for cheap daily necessities."],
   "Thiruvananthapuram":["Capital city with relatively lower cost than Kochi.","Technopark area for IT workers with well-managed rent levels.","Chalai Market for the cheapest fresh produce in the city."]
 };
 
@@ -1125,8 +1137,8 @@ function calculate(){
   const surplus=sal2-col2.total,sp=surplus/sal2;
   let tier,pill,vhl,vsub;
   if(sp>=0.3){tier='great';pill='✓ Comfortable';vhl=`You'll live well in ${c2}`;vsub=`${fmt(surplus)} left after all expenses every month`}
-  else if(sp>=0.1){tier='great';pill='✓ Manageable';vhl=`${c2} works on this salary`;vsub=`${fmt(surplus)} monthly buffer — keep an eye on spending`}
-  else if(sp>=0){tier='okay';pill='~ Tight';vhl=`Doable, but you'll feel the pinch`;vsub=`Only ${fmt(surplus)} buffer — one bad month hurts`}
+  else if(sp>=0.1){tier='great';pill='✓ Manageable';vhl=`${c2} works on this salary`;vsub=`${fmt(surplus)} monthly buffer - keep an eye on spending`}
+  else if(sp>=0){tier='okay';pill='~ Tight';vhl=`Doable, but you'll feel the pinch`;vsub=`Only ${fmt(surplus)} buffer - one bad month hurts`}
   else{tier='tight';pill='✗ Shortfall';vhl=`Your salary doesn't cover ${c2}`;vsub=`You need at least ${fmt(Math.round(col2.total*1.15))}/mo to live here`}
 
   document.getElementById('vband').className='verdict-band '+tier;
@@ -1161,7 +1173,7 @@ function calculate(){
   document.getElementById('affJobBtn').href=`https://www.naukri.com/${role.toLowerCase().replace(/[\s/]+/g,'-')}-jobs-in-${c2.toLowerCase()}`;
   document.getElementById('affFlatBtn').href=`https://www.nobroker.in/${c2.toLowerCase()}/rent`;
 
-  // Amazon affiliate — replace kaafihai-21 with your actual Associate tag after approval
+  // Amazon affiliate - replace kaafihai-21 with your actual Associate tag after approval
   const AMZTAG='kaafihai-21';
   const amzItems=[
     {label:'Packing boxes',q:'packing+boxes+moving'},
@@ -1194,15 +1206,15 @@ async function fetchAI(c1,c2,sal1,sal2,col1,col2,surplus,thDiff,lifestyle,mem,ro
   let analysis='';
   if(thDiff>=0){
     if(rentDiff>20){
-      analysis=`Moving from <strong>${c1} to ${c2}</strong> puts an extra <strong>${absDiff}/month</strong> in your pocket as a ${expLbl} ${role} — ${c2} pays ${salDiff>0?salDiff+'% more':'similarly'} but the real win is that the overall cost structure still leaves you ahead despite ${c2}'s higher rent. Put at least <strong>${sipVal}/month</strong> into a SIP or Nifty 50 index fund from day one — that compounding is what actually changes your financial picture over 5 years. Build a 3-month emergency fund first, then invest the rest aggressively.`;
+      analysis=`Moving from <strong>${c1} to ${c2}</strong> puts an extra <strong>${absDiff}/month</strong> in your pocket as a ${expLbl} ${role} - ${c2} pays ${salDiff>0?salDiff+'% more':'similarly'} but the real win is that the overall cost structure still leaves you ahead despite ${c2}'s higher rent. Put at least <strong>${sipVal}/month</strong> into a SIP or Nifty 50 index fund from day one - that compounding is what actually changes your financial picture over 5 years. Build a 3-month emergency fund first, then invest the rest aggressively.`;
     } else {
-      analysis=`As a ${expLbl} ${role}, <strong>${c2} beats ${c1}</strong> by <strong>${absDiff}/month</strong> in real take-home after all living costs — ${c2}'s ${salDiff>0?'higher salary market':'lower cost structure'} is doing the heavy lifting here. The smart move is to automate <strong>${sipVal}/month</strong> into a Nifty 50 index fund from your very first paycheck in ${c2} — future you will thank you. Negotiate your offer hard before accepting; ${c2} roles at your level have more room than most people realise.`;
+      analysis=`As a ${expLbl} ${role}, <strong>${c2} beats ${c1}</strong> by <strong>${absDiff}/month</strong> in real take-home after all living costs - ${c2}'s ${salDiff>0?'higher salary market':'lower cost structure'} is doing the heavy lifting here. The smart move is to automate <strong>${sipVal}/month</strong> into a Nifty 50 index fund from your very first paycheck in ${c2} - future you will thank you. Negotiate your offer hard before accepting; ${c2} roles at your level have more room than most people realise.`;
     }
   } else {
     if(Math.abs(thDiff)>15000){
-      analysis=`The numbers are clear — staying in <strong>${c1} saves you ${absDiff}/month</strong> compared to moving to ${c2} as a ${expLbl} ${role}, because ${c2}'s cost of living${col2.rent>col1.rent*1.3?' (especially rent)':''} outpaces the salary bump significantly. If ${c2} is still your goal, you need at least <strong>${neededSal}/month gross</strong> to genuinely come out ahead after expenses. Look at satellite areas of ${c2} to cut rent by 30–40% — that alone can shift the math in your favour.`;
+      analysis=`The numbers are clear - staying in <strong>${c1} saves you ${absDiff}/month</strong> compared to moving to ${c2} as a ${expLbl} ${role}, because ${c2}'s cost of living${col2.rent>col1.rent*1.3?' (especially rent)':''} outpaces the salary bump significantly. If ${c2} is still your goal, you need at least <strong>${neededSal}/month gross</strong> to genuinely come out ahead after expenses. Look at satellite areas of ${c2} to cut rent by 30–40% - that alone can shift the math in your favour.`;
     } else {
-      analysis=`Moving to <strong>${c2} costs ${absDiff}/month more</strong> in real terms for a ${expLbl} ${role} — not a dealbreaker, but not neutral either. You need <strong>${neededSal}/month gross</strong> in ${c2} to come out ahead after all living costs. If the role offers meaningful career acceleration that ${c1} doesn't, it can still be worth it — but go in with eyes open and negotiate accordingly.`;
+      analysis=`Moving to <strong>${c2} costs ${absDiff}/month more</strong> in real terms for a ${expLbl} ${role} - not a dealbreaker, but not neutral either. You need <strong>${neededSal}/month gross</strong> in ${c2} to come out ahead after all living costs. If the role offers meaningful career acceleration that ${c1} doesn't, it can still be worth it - but go in with eyes open and negotiate accordingly.`;
     }
   }
   dot.className='ai-dot done';
@@ -1226,7 +1238,7 @@ function toggleFaq(btn){
 function submitFeedback(){
   const msg=document.getElementById('fb-msg').value.trim();
   if(!msg){document.getElementById('fb-msg').focus();return}
-  // Sends to Formspree — replace YOUR_FORM_ID with your actual ID from formspree.io (free)
+  // Sends to Formspree - replace YOUR_FORM_ID with your actual ID from formspree.io (free)
   const type=document.getElementById('fb-type').value;
   const name=document.getElementById('fb-name').value||'Anonymous';
   const mailtoLink=`mailto:hello@kaafihai.in?subject=Feedback: ${encodeURIComponent(type)}&body=${encodeURIComponent('From: '+name+'\n\n'+msg)}`;
@@ -1306,11 +1318,11 @@ function openShare(platform){
   if(diff>=0){
     card.style.background='var(--green)';
     mainEl.textContent=`+${diffAbs}/mo more in ${c2}`;
-    subEl.textContent=`As a ${exp} ${role} — moving pays off`;
+    subEl.textContent=`As a ${exp} ${role} - moving pays off`;
   }else{
     card.style.background='var(--red)';
     mainEl.textContent=`${diffAbs}/mo less in ${c2}`;
-    subEl.textContent=`As a ${exp} ${role} — staying pays off`;
+    subEl.textContent=`As a ${exp} ${role} - staying pays off`;
   }
 
   const text=diff>=0
@@ -1407,7 +1419,7 @@ document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.le
   const stage=document.getElementById('cityCardsStage');
   if(!stage)return;
 
-  // Cards show salary benchmarks — different from the ticker which shows COL
+  // Cards show salary benchmarks - different from the ticker which shows COL
   // Positioned away from center so they don't overlap headline text
   // Each card shows a different role so they're genuinely unique
   const CARDS=[
@@ -1431,7 +1443,7 @@ document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.le
     el.innerHTML=`<div class="cc-inner" style="position:relative">
       <div class="cc-pulse"></div>
       <div class="cc-name">${c.name}</div>
-      <div class="cc-val">${c.role.split(' ')[0]} · ${salStr}</div>
+      <div class="cc-val">${c.role.split(' ')[0]} - ${salStr}</div>
     </div>`;
     stage.appendChild(el);
     // Staggered fade in
@@ -1442,7 +1454,7 @@ document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.le
     els.push({el,depth:c.depth,initRot:c.initRot});
   });
 
-  // Mouse parallax with clamped rotation — NO flipping
+  // Mouse parallax with clamped rotation - NO flipping
   let hx=0,hy=0,thx=0,thy=0;
   document.addEventListener('mousemove',e=>{
     thx=(e.clientX/window.innerWidth-.5);
