@@ -501,6 +501,7 @@ footer{border-top:1px solid var(--paper-3);padding:3rem 2rem 2rem;padding-bottom
 .footer-links{display:flex;flex-direction:column;gap:.5rem;align-items:flex-end}
 .footer-links a{font-size:.82rem;color:var(--ink-3);text-decoration:none;transition:color 150ms}
 .footer-links a:hover{color:var(--green)}
+.footer-compare{max-width:900px;margin:1.5rem auto 0;font-size:.78rem;display:flex;flex-direction:column;gap:.5rem}.footer-compare div{display:flex;flex-wrap:wrap;gap:.25rem .9rem;align-items:baseline}.footer-compare b{font-weight:500;color:var(--ink-2)}.footer-compare b::after{content:':'}.footer-compare a{color:var(--ink-3);text-decoration:none}.footer-compare a:hover{color:var(--green)}
 .footer-bottom{max-width:900px;margin:2rem auto 0;padding-top:1.5rem;border-top:1px solid var(--paper-2);font-size:.75rem;color:var(--ink-3);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
 .footer-bottom a{color:var(--ink-3);text-decoration:none}
 .footer-bottom a:hover{color:var(--green)}
@@ -929,12 +930,14 @@ footer{border-top:1px solid var(--paper-3);padding:3rem 2rem 2rem;padding-bottom
       <a href="#faq" id="f-faq">FAQ</a>
       <a href="#about" id="f-about">About</a>
       <a href="#support" id="f-support">Support</a>
+      <a href="/blog.html" id="f-blog">Blog</a>
       <a href="/contact.html" id="f-contact">Contact</a>
       <a href="/privacy-policy.html">Privacy</a>
       <a href="/terms.html">Terms</a>
       <a href="/disclaimer.html">Disclaimer</a>
     </nav>
   </div>
+  <div class="footer-compare" aria-label="Popular comparisons"><div><b id="f-col">Cost of living</b><a href="/cost-of-living-bangalore-vs-hyderabad.html">Bangalore vs Hyderabad</a><a href="/cost-of-living-chennai-vs-bangalore.html">Chennai vs Bangalore</a><a href="/cost-of-living-delhi-vs-bangalore.html">Delhi vs Bangalore</a><a href="/cost-of-living-kolkata-vs-mumbai.html">Kolkata vs Mumbai</a><a href="/cost-of-living-mumbai-vs-pune.html">Mumbai vs Pune</a></div><div><b id="f-sal">Salaries</b><a href="/software-engineer-salary-bangalore-vs-hyderabad.html">Software Engineer: Bangalore vs Hyderabad</a><a href="/software-engineer-salary-mumbai-vs-bangalore.html">Software Engineer: Mumbai vs Bangalore</a><a href="/software-engineer-salary-pune-vs-bangalore.html">Software Engineer: Pune vs Bangalore</a><a href="/data-scientist-salary-delhi-vs-bangalore.html">Data Scientist: Delhi vs Bangalore</a><a href="/product-manager-salary-hyderabad-vs-mumbai.html">Product Manager: Hyderabad vs Mumbai</a></div></div>
   <div class="footer-bottom">
     <span id="footer-data">Estimates, not survey data. Checked against public salary reports and government pay scales. Reviewed November 2026.</span>
     <span>© 2026 Kaafi Hai. Built for India 🇮🇳 <a href="#feedback" id="f-report">Report an error</a></span>
@@ -1211,7 +1214,7 @@ const TR={
     "support-note":"Kaafi Hai will always be free. Supporters just help it get better faster.<br>Questions? <a href='mailto:hello@kaafihai.in'>hello@kaafihai.in</a>",
     "footer-tagline":"Compare salaries and cost of living across 50 Indian cities.<br>See what you actually keep after rent, food and transport.",
     "footer-data":"Estimates, not survey data. Checked against public salary reports and government pay scales. Reviewed November 2026.",
-    "f-calc":"Calculator","f-how":"How it works","f-faq":"FAQ","f-about":"About","f-support":"Support","f-contact":"Contact","f-report":"Report an error",
+    "f-calc":"Calculator","f-how":"How it works","f-faq":"FAQ","f-about":"About","f-support":"Support","f-contact":"Contact","f-report":"Report an error","f-blog":"Blog","f-col":"Cost of living","f-sal":"Salaries",
     "nav-how":"How it works","nav-about":"About","nav-feedback":"Feedback","nav-support":"Support",
     "m-calc":"Calculator","m-how":"How it works","m-faq":"FAQ","m-about":"About","m-feedback":"Feedback","m-support":"Support","m-verdict":"Get verdict",
     "winner-badge":"Better take-home","after-expenses":"After all expenses:",
@@ -1270,7 +1273,7 @@ const TR={
     "support-note":"Kaafi Hai हमेशा मुफ्त रहेगा। Supporters इसे बेहतर बनाने में मदद करते हैं।<br>सवाल? <a href='mailto:hello@kaafihai.in'>hello@kaafihai.in</a>",
     "footer-tagline":"50 भारतीय शहरों में salary और खर्च की तुलना करें।<br>किराया, खाना और ट्रांसपोर्ट के बाद क्या बचता है।",
     "footer-data":"Estimates हैं, survey data नहीं। Public salary reports और सरकारी pay scales से जांचा गया। November 2026 में review किया।",
-    "f-calc":"Calculator","f-how":"कैसे काम करता है","f-faq":"FAQ","f-about":"हमारे बारे में","f-support":"Support","f-contact":"Contact","f-report":"Error report करें",
+    "f-calc":"Calculator","f-how":"कैसे काम करता है","f-faq":"FAQ","f-about":"हमारे बारे में","f-support":"Support","f-contact":"Contact","f-report":"Error report करें","f-blog":"Blog","f-col":"\u0930\u0939\u0928\u0947 \u0915\u093e \u0916\u0930\u094d\u091a","f-sal":"Salary",
     "nav-how":"कैसे काम करता है","nav-about":"हमारे बारे में","nav-feedback":"Feedback","nav-support":"Support",
     "m-calc":"Calculator","m-how":"कैसे काम करता है","m-faq":"FAQ","m-about":"हमारे बारे में","m-feedback":"Feedback","m-support":"Support","m-verdict":"Verdict पाएं",
     "winner-badge":"बेहतर बचत","after-expenses":"सभी खर्चों के बाद:",
