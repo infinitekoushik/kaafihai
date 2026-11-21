@@ -52,9 +52,11 @@
       <div class="field"><label for="cname" data-hi="आपका नाम (ज़रूरी नहीं)">Your name (optional)</label><input id="cname" name="cname" type="text" autocomplete="name"></div>
       <div class="field"><label for="topic" data-hi="यह किस बारे में है?">What is this about?</label><select id="topic" name="topic"><option value="Wrong salary data" data-hi="गलत salary data">Wrong salary data</option><option value="Wrong living cost data" data-hi="गलत रहने के खर्च का data">Wrong living cost data</option><option value="Idea or feature request" data-hi="सुझाव या feature request">Idea or feature request</option><option value="Bug report" data-hi="Bug report">Bug report</option><option value="Press or collaboration" data-hi="Press या collaboration">Press or collaboration</option><option value="Something else" data-hi="कुछ और">Something else</option></select></div>
     </div>
+    <div class="field"><label for="cemail" data-hi="आपका email (ऐच्छिक, सिर्फ जवाब चाहिए तो)">Your email (optional, only if you want a reply)</label><input id="cemail" name="cemail" type="email" autocomplete="email" inputmode="email"></div>
+    <input type="checkbox" id="cbot" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
     <div class="field"><label for="msg" data-hi="आपका संदेश">Your message</label><textarea id="msg" name="msg" required data-hi-placeholder="जैसे: Pune में mid-level data scientist की salary कम लग रही है। मौजूदा listings में लगभग 95,000 से 1,10,000 प्रति माह दिख रहा है।" placeholder="For example: Mid-level data scientist pay in Pune looks low. Current listings show about 95,000 to 1,10,000 a month."></textarea></div>
-    <button class="btn" type="submit" data-hi="Email खोलें">Open email</button>
-    <p class="mail-note" id="mailNote" hidden data-hi="आपका email app संदेश के साथ खुलना चाहिए। अगर कुछ न खुले तो hello@kaafihai.in पर लिखें।">Your email app should open with the message ready. If nothing opens, write to hello@kaafihai.in.</p>
+    <button class="btn" type="submit" data-hi="संदेश भेजें">Send message</button>
+    <p class="mail-note" id="sendStatus" role="status" hidden></p>
   </form>
   <div class="card">
     <h2 data-hi="सीधे email करें">Email directly</h2>
@@ -108,16 +110,30 @@
   };
   setTheme(root.getAttribute('data-theme')==='dark');
   try{if(localStorage.getItem(LK)==='hi')apply('hi')}catch(e){}
+  // Paste the Web3Forms access key (same one as in index.html). Until then the form falls back to the mail link.
+  var CONTACT_KEY='PASTE_WEB3FORMS_KEY_HERE',busy=false;
   var f=doc.getElementById('contactForm');
   if(f){
     f.addEventListener('submit',function(e){
       e.preventDefault();
-      var el=f.elements,msg=el['msg'].value.trim();
+      var el=f.elements,msg=el['msg'].value.trim(),st=doc.getElementById('sendStatus'),hi=(typeof lang!=='undefined'&&lang==='hi');
       if(!msg){el['msg'].focus();return}
-      var name=el['cname'].value.trim()||'Anonymous';
-      var subject='Kaafi Hai: '+el['topic'].value;
-      location.href='mailto:hello@kaafihai.in?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent('From: '+name+'\n\n'+msg);
-      doc.getElementById('mailNote').hidden=false;
+      if(busy||doc.getElementById('cbot').checked)return;
+      var name=el['cname'].value.trim()||'Anonymous',email=el['cemail'].value.trim(),subject='Kaafi Hai: '+el['topic'].value;
+      function say(en,h){st.textContent=hi?h:en;st.hidden=false}
+      if(CONTACT_KEY.indexOf('PASTE_')===0){
+        location.href='mailto:hello@kaafihai.in?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent('From: '+name+'\n\n'+msg);
+        say('Your email app should open with the message ready. If nothing opens, write to hello@kaafihai.in.','आपका email app संदेश के साथ खुलना चाहिए। कुछ न खुले तो hello@kaafihai.in पर लिखें।');return}
+      busy=true;say('Sending...','भेज रहे हैं...');
+      fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({access_key:CONTACT_KEY,subject:subject,from_name:'Kaafi Hai contact',name:name,email:email||undefined,topic:el['topic'].value,message:msg,page:location.href})})
+        .then(function(r){return r.json().then(function(d){return r.ok&&d.success})})
+        .then(function(ok){
+          if(!ok)throw new Error('send failed');
+          el['msg'].value='';el['cname'].value='';el['cemail'].value='';
+          say('Thank you. Your message was sent.','धन्यवाद। आपका संदेश भेज दिया गया।');
+        })
+        .catch(function(){say('Could not send. Please email hello@kaafihai.in instead.','भेज नहीं पाए। कृपया hello@kaafihai.in पर email करें।')})
+        .then(function(){busy=false});
     });
   }
 })();
