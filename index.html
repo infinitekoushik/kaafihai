@@ -472,6 +472,27 @@ select:focus,input[type=number]:focus{border-color:var(--green);background:var(-
 .fb-submit:hover{background:var(--green-mid);transform:translateY(-1px)}
 .fb-success{display:none;background:var(--green-light);border:1px solid var(--green);border-radius:10px;padding:1rem 1.25rem;font-size:.9rem;color:var(--green);font-weight:500;margin-top:1rem;text-align:center}
 .fb-success.show{display:block}
+.fb-error{display:none;background:#fdecea;border:1px solid var(--red);border-radius:10px;padding:1rem 1.25rem;font-size:.9rem;color:var(--red);font-weight:500;margin-top:1rem;text-align:center}
+.fb-error.show{display:block}
+.vote-panel{padding:1.25rem 2rem;border-top:1px solid var(--paper-2);background:var(--paper)}
+.vote-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.vote-q{font-family:var(--ff-d);font-size:.88rem;font-weight:700;color:var(--ink)}
+.vote-btns{display:flex;gap:.6rem;flex-wrap:wrap}
+.vote-btn{display:inline-flex;align-items:center;gap:.45rem;border:1.5px solid var(--paper-3);border-radius:100px;padding:.5rem 1.1rem;font-family:var(--ff-b);font-size:.82rem;font-weight:600;cursor:pointer;background:var(--white);color:var(--ink-2);transition:all 150ms}
+.vote-btn:hover:not(:disabled){border-color:var(--ink);color:var(--ink)}
+.vote-btn.picked{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.vote-btn:disabled{cursor:default;opacity:.75}
+.vote-more{margin-top:1rem}
+.vote-why{font-size:.78rem;color:var(--ink-3);margin-bottom:.5rem}
+.vote-chips{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:.75rem}
+.vote-chip{padding:.4rem .9rem;border:1.5px solid var(--paper-3);border-radius:100px;font-size:.78rem;font-weight:500;font-family:var(--ff-b);background:var(--white);color:var(--ink-2);cursor:pointer;transition:all 150ms}
+.vote-chip:hover{border-color:var(--ink-3);color:var(--ink)}
+.vote-chip.on{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.vote-send{display:inline-flex;align-items:center;background:var(--green);color:var(--white);border:none;border-radius:9px;padding:.6rem 1.4rem;font-family:var(--ff-d);font-size:.85rem;font-weight:700;cursor:pointer;margin-top:.6rem;transition:background 150ms}
+.vote-send:hover{background:var(--green-mid)}
+.vote-thanks{margin-top:.75rem;font-size:.85rem;color:var(--green);font-weight:500}
+@media(max-width:640px){.vote-panel{padding:1.25rem}}
+[data-theme="dark"] .fb-error{background:#2b1411}
 .fb-note{font-size:.78rem;color:var(--ink-3);margin-top:1rem;line-height:1.6}
 .fb-note a{color:var(--green);text-decoration:none}
 
@@ -783,6 +804,29 @@ footer{border-top:1px solid var(--paper-3);padding:3rem 2rem 2rem;padding-bottom
         <div class="ai-topbar"><div class="ai-badge"><div class="ai-dot" id="aiDot"></div><span id="our-read-label">Our read</span></div></div>
         <div class="ai-body" id="aiBody"><span class="dots"><span>.</span><span>.</span><span>.</span></span></div>
       </div>
+      <div class="vote-panel" id="votePanel">
+        <div class="vote-row">
+          <span class="vote-q" id="vote-q">Do these numbers look right for you?</span>
+          <div class="vote-btns">
+            <button type="button" class="vote-btn" id="voteUp" aria-pressed="false" onclick="castVote('up')"><span aria-hidden="true">&#128077;</span><span id="vote-up-t">Looks right</span></button>
+            <button type="button" class="vote-btn" id="voteDown" aria-pressed="false" onclick="castVote('down')"><span aria-hidden="true">&#128078;</span><span id="vote-down-t">Looks off</span></button>
+          </div>
+        </div>
+        <div class="vote-more" id="voteMore" hidden>
+          <div class="vote-why" id="vote-why">What looks off? Pick any that apply.</div>
+          <div class="vote-chips" id="voteChips">
+            <button type="button" class="vote-chip" data-r="salary_high" id="vr-1" onclick="toggleChip(this)">Salary looks too high</button>
+            <button type="button" class="vote-chip" data-r="salary_low" id="vr-2" onclick="toggleChip(this)">Salary looks too low</button>
+            <button type="button" class="vote-chip" data-r="rent" id="vr-3" onclick="toggleChip(this)">Rent looks wrong</button>
+            <button type="button" class="vote-chip" data-r="other_costs" id="vr-4" onclick="toggleChip(this)">Food or other costs look wrong</button>
+            <button type="button" class="vote-chip" data-r="role" id="vr-5" onclick="toggleChip(this)">My role is missing or wrong</button>
+            <button type="button" class="vote-chip" data-r="other" id="vr-6" onclick="toggleChip(this)">Something else</button>
+          </div>
+          <textarea class="fb-input fb-textarea" id="voteText" maxlength="500" aria-label="Details"></textarea>
+          <button type="button" class="vote-send" id="vote-send" onclick="sendVoteDetail()">Send</button>
+        </div>
+        <div class="vote-thanks" id="voteThanks" role="status" hidden></div>
+      </div>
       <!-- AdSense slot 1 -->
       <!-- <div class="ad-slot-between"><div class="ad-slot"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins></div></div> -->
       <div class="bars-panel">
@@ -872,13 +916,16 @@ footer{border-top:1px solid var(--paper-3);padding:3rem 2rem 2rem;padding-bottom
         </div>
       </div>
     </div>
+    <div class="fb-field" style="margin-bottom:1rem"><label class="fb-label" for="fb-email" id="fb-email-label">Your email (optional, only if you want a reply)</label><input class="fb-input" type="email" id="fb-email" autocomplete="email" inputmode="email"></div>
+    <input type="checkbox" id="fb-bot" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
     <div class="fb-field" style="margin-bottom:1rem">
       <label class="fb-label" for="fb-msg" id="fb-msg-label">Your message</label>
       <textarea class="fb-input fb-textarea" id="fb-msg"></textarea>
     </div>
     <button class="fb-submit" onclick="submitFeedback()"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8l10-6-4 6 4 6z"/></svg><span id="fb-submit-text">Send feedback</span></button>
     <div class="fb-success" id="fbSuccess" role="alert">Thank you. Your feedback helps improve the data for everyone.</div>
-    <p class="fb-note" id="fb-note">Your feedback goes directly to the team. Email us at <a href="mailto:hello@kaafihai.in">hello@kaafihai.in</a></p>
+    <div class="fb-error" id="fb-error" role="alert">Could not send your message. Please email hello@kaafihai.in instead.</div>
+    <p class="fb-note" id="fb-note">Your message comes straight to me. You can also email <a href="mailto:hello@kaafihai.in">hello@kaafihai.in</a></p>
   </div>
 </section>
 
@@ -1209,7 +1256,9 @@ const TR={
     "feedback-heading":"Something look off?",
     "fb-name-label":"Your name (optional)","fb-type-label":"Type of feedback","fb-msg-label":"Your message","fb-submit-text":"Send feedback",
     "fbt-1":"Wrong salary data","fbt-2":"Wrong cost of living data","fbt-3":"Feature request","fbt-4":"Bug report","fbt-5":"General suggestion","fbt-6":"Something else",
-    "fb-note":"Your feedback goes directly to the team. Email us at <a href='mailto:hello@kaafihai.in'>hello@kaafihai.in</a>",
+    "vote-q":"Do these numbers look right for you?","vote-up-t":"Looks right","vote-down-t":"Looks off","vote-why":"What looks off? Pick any that apply.","vr-1":"Salary looks too high","vr-2":"Salary looks too low","vr-3":"Rent looks wrong","vr-4":"Food or other costs look wrong","vr-5":"My role is missing or wrong","vr-6":"Something else","vote-send":"Send","vote-ph":"Optional: what should it say instead? (city, role, number)","vote-thanks-up":"Thanks. That helps keep the numbers honest.","vote-thanks-down":"Thanks. I read every one of these and fix the data.",
+    "fb-note":"Your message comes straight to me. You can also email <a href='mailto:hello@kaafihai.in'>hello@kaafihai.in</a>",
+    "fb-email-label":"Your email (optional, only if you want a reply)","fb-error":"Could not send your message. Please email hello@kaafihai.in instead.","fb-sending":"Sending...",
     "support-heading":"Keep this free",
     "support-intro":"Kaafi Hai is free to use with no login or paywall. If it helped you make a better decision about a city or job offer, you can help keep the data updated and the site running.",
     "sup1-t":"Buy me a coffee","sup1-d":"One-time support. Every contribution goes directly into keeping the data current and the site running.","sup1-btn":"Support on Buy Me a Coffee",
@@ -1268,7 +1317,9 @@ const TR={
     "feedback-heading":"कुछ गलत लगा?",
     "fb-name-label":"आपका नाम (ऐच्छिक)","fb-type-label":"फीडबैक का प्रकार","fb-msg-label":"आपका संदेश","fb-submit-text":"फीडबैक भेजें",
     "fbt-1":"गलत salary data","fbt-2":"गलत cost of living data","fbt-3":"Feature request","fbt-4":"Bug report","fbt-5":"कोई सुझाव","fbt-6":"कुछ और",
-    "fb-note":"आपका feedback सीधे team तक जाता है। email करें: <a href='mailto:hello@kaafihai.in'>hello@kaafihai.in</a>",
+    "vote-q":"ये नंबर आपको सही लगे?","vote-up-t":"सही लगे","vote-down-t":"गलत लगे","vote-why":"क्या गलत लगा? जो लागू हो चुनें।","vr-1":"सैलरी ज़्यादा लगी","vr-2":"सैलरी कम लगी","vr-3":"किराया गलत लगा","vr-4":"खाना या बाकी खर्च गलत लगे","vr-5":"मेरा role नहीं है या गलत है","vr-6":"कुछ और","vote-send":"भेजें","vote-ph":"ऐच्छिक: सही क्या होना चाहिए? (शहर, role, नंबर)","vote-thanks-up":"धन्यवाद। इससे नंबर ईमानदार रहते हैं।","vote-thanks-down":"धन्यवाद। मैं हर जवाब पढ़ता हूं और data ठीक करता हूं।",
+    "fb-note":"आपका संदेश सीधे मुझ तक पहुंचता है। आप <a href='mailto:hello@kaafihai.in'>hello@kaafihai.in</a> पर email भी कर सकते हैं।",
+    "fb-email-label":"आपका email (ऐच्छिक, सिर्फ जवाब चाहिए तो)","fb-error":"संदेश भेज नहीं पाए। कृपया hello@kaafihai.in पर email करें।","fb-sending":"भेज रहे हैं...",
     "support-heading":"इसे मुफ्त रखें",
     "support-intro":"Kaafi Hai बिल्कुल मुफ्त है, कोई लॉगिन नहीं, कोई paywall नहीं। अगर इसने किसी फैसले में मदद की तो site को चलाने में मदद करें।",
     "sup1-t":"एक कॉफी पिलाओ","sup1-d":"एक बार का support। हर contribution सीधे data update और site चलाने में जाता है।","sup1-btn":"Buy Me a Coffee पर support करें",
@@ -1634,6 +1685,8 @@ function applyLang(){
   }
 
   refreshCardLabels();
+  if(voteKey){const th=document.getElementById('voteThanks');if(th)th.textContent=t(voteKey)}
+  {const ta=document.getElementById('voteText');if(ta)ta.placeholder=t('vote-ph')}
 
   try{localStorage.setItem('kh-lang',currentLang)}catch(e){}
 }
@@ -1758,6 +1811,7 @@ function renderResults(p,runAnalysis){
     const dot=document.getElementById('aiDot'),body=document.getElementById('aiBody');
     dot.className='ai-dot';
     body.innerHTML='<span class="dots"><span>.</span><span>.</span><span>.</span></span>';
+    resetVote();
   }
 }
 
@@ -1834,13 +1888,61 @@ function toggleFaq(btn){
   if(!isOpen){item.classList.add('open');btn.setAttribute('aria-expanded','true')}
 }
 
-function submitFeedback(){
-  const msg=document.getElementById('fb-msg').value.trim();
-  if(!msg){document.getElementById('fb-msg').focus();return}
-  const type=document.getElementById('fb-type').value,name=document.getElementById('fb-name').value||'Anonymous';
-  window.location.href='mailto:hello@kaafihai.in?subject=Feedback: '+encodeURIComponent(type)+'&body='+encodeURIComponent('From: '+name+'\n\n'+msg);
-  document.getElementById('fbSuccess').classList.add('show');
-  document.getElementById('fb-msg').value='';document.getElementById('fb-name').value='';
+// Feedback goes to the owner's inbox through Web3Forms (free access key, safe to be public).
+// Paste the key from the Web3Forms email below. Until then the form falls back to the old mail link.
+const FEEDBACK_KEY='PASTE_WEB3FORMS_KEY_HERE';
+let feedbackBusy=false;
+async function submitFeedback(){
+  const msgEl=document.getElementById('fb-msg'),msg=msgEl.value.trim();
+  if(!msg){msgEl.focus();return}
+  if(feedbackBusy||document.getElementById('fb-bot').checked)return;
+  const type=document.getElementById('fb-type').value,name=document.getElementById('fb-name').value.trim()||'Anonymous',email=document.getElementById('fb-email').value.trim();
+  const ok=document.getElementById('fbSuccess'),err=document.getElementById('fb-error'),btn=document.getElementById('fb-submit-text');
+  ok.classList.remove('show');err.classList.remove('show');
+  if(FEEDBACK_KEY.indexOf('PASTE_')===0){
+    window.location.href='mailto:hello@kaafihai.in?subject='+encodeURIComponent('Feedback: '+type)+'&body='+encodeURIComponent('From: '+name+'\n\n'+msg);return}
+  feedbackBusy=true;btn.textContent=t('fb-sending');
+  try{
+    const r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({access_key:FEEDBACK_KEY,subject:'Kaafi Hai feedback: '+type,from_name:'Kaafi Hai feedback',name:name,email:email||undefined,type:type,message:msg,page:location.href,lang:currentLang})});
+    const d=await r.json();
+    if(!(r.ok&&d.success))throw new Error('send failed');
+    ok.classList.add('show');msgEl.value='';document.getElementById('fb-name').value='';document.getElementById('fb-email').value='';
+  }catch(e){err.classList.add('show')}
+  feedbackBusy=false;btn.textContent=t('fb-submit-text');
+}
+
+// ══ THUMBS FEEDBACK ON RESULTS ══
+if(typeof window.gtag!=='function'){window.dataLayer=window.dataLayer||[];window.gtag=function(){window.dataLayer.push(arguments)}}
+let voteDone=false,voteKey='';
+function voteCtx(){const p=lastCalc||{};return{from_city:p.c1||'',to_city:p.c2||'',role:p.role||'',experience:p.exp||'',lifestyle:p.ls||''}}
+function resetVote(){
+  voteDone=false;voteKey='';
+  ['voteUp','voteDown'].forEach(id=>{const b=document.getElementById(id);if(b){b.disabled=false;b.classList.remove('picked');b.setAttribute('aria-pressed','false')}});
+  const m=document.getElementById('voteMore'),th=document.getElementById('voteThanks'),tx=document.getElementById('voteText');
+  if(m)m.hidden=true;if(th){th.hidden=true;th.textContent=''}if(tx)tx.value='';
+  document.querySelectorAll('.vote-chip.on').forEach(c=>c.classList.remove('on'));
+}
+function toggleChip(b){b.classList.toggle('on')}
+function showVoteThanks(k){voteKey=k;const th=document.getElementById('voteThanks');th.textContent=t(k);th.hidden=false}
+function castVote(v){
+  if(!lastCalc||voteDone)return;
+  voteDone=true;
+  const up=document.getElementById('voteUp'),down=document.getElementById('voteDown'),pick=v==='up'?up:down;
+  up.disabled=true;down.disabled=true;pick.classList.add('picked');pick.setAttribute('aria-pressed','true');
+  try{gtag('event','result_feedback',Object.assign({vote:v},voteCtx()))}catch(e){}
+  if(v==='up'){showVoteThanks('vote-thanks-up');return}
+  document.getElementById('voteText').placeholder=t('vote-ph');
+  document.getElementById('voteMore').hidden=false;
+  document.getElementById('voteText').focus();
+}
+async function sendVoteDetail(){
+  const reasons=[...document.querySelectorAll('.vote-chip.on')].map(c=>c.dataset.r),text=document.getElementById('voteText').value.trim();
+  document.getElementById('voteMore').hidden=true;showVoteThanks('vote-thanks-down');
+  if(!reasons.length&&!text)return;
+  try{gtag('event','result_feedback_reason',Object.assign({reasons:reasons.join(',').slice(0,100),has_text:text?'yes':'no'},voteCtx()))}catch(e){}
+  if(FEEDBACK_KEY.indexOf('PASTE_')===0)return;
+  const p=lastCalc,c=voteCtx();
+  try{await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({access_key:FEEDBACK_KEY,subject:'Kaafi Hai: numbers look off ('+c.from_city+' to '+c.to_city+', '+c.role+')',from_name:'Kaafi Hai thumbs down',name:'Result feedback',message:'Looks off: '+(reasons.join(', ')||'no reason picked')+'\n\nDetails: '+(text||'none')+'\n\nCities: '+c.from_city+' to '+c.to_city+'\nRole: '+c.role+' ('+c.experience+')\nSalary entered: '+Math.round(p.sal1)+'\nHousehold: '+p.mem+', lifestyle: '+c.lifestyle+'\nLanguage: '+currentLang+'\nPage: '+location.href})})}catch(e){}
 }
 
 // MOBILE MENU
