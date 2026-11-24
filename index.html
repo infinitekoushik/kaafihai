@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K4674FL9');</script>
+<script>window.dataLayer=window.dataLayer||[];window.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});(function(){var done=false;function go(){if(done)return;done=true;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtm.js?id=GTM-K4674FL9';document.head.appendChild(s)}['pointerdown','keydown','scroll','touchstart'].forEach(function(e){addEventListener(e,go,{once:true,passive:true})});addEventListener('load',function(){setTimeout(go,2500)})})();</script>
 <!-- End Google Tag Manager -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#1a5c3a" media="(prefers-color-scheme: dark)">
@@ -38,27 +38,30 @@
 <!-- <script src="//cl.cuelinks.com/cljs/XXXXXXXX.js" async></script> -->
 <!-- AdSense: replace ca-pub-XXXXXXXXXXXXXXXX after approval -->
 <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-<style>
+<link rel="preload" href="/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/syne-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/inter-rupee.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:'Inter';font-style:normal;font-weight:400 700;font-display:swap;src:url(/inter-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2013-2014,U+2018-201D,U+2022,U+2026,U+203A,U+2212}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 700;font-display:swap;src:url(/inter-rupee.woff2) format('woff2');unicode-range:U+20B9}
+@font-face{font-family:'Syne';font-style:normal;font-weight:400 800;font-display:swap;src:url(/syne-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2013-2014,U+2018-201D,U+2022,U+2026,U+203A,U+2212}
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --ink:#0b0b0b;--ink-2:#3d3d3d;--ink-3:#8a8a8a;
+  --ink:#0b0b0b;--ink-2:#3d3d3d;--ink-3:#595959;
   --paper:#f5f2ec;--paper-2:#eceae3;--paper-3:#dedad0;
   --white:#fff;
   --green:#1a5c3a;--green-mid:#2d7a52;--green-light:#e5f2eb;
-  --amber:#9a6c1a;--red:#a33020;
+  --amber:#7d530e;--red:#a33020;
   --ff-d:'Syne',sans-serif;--ff-b:'Inter',sans-serif;
   --ease:cubic-bezier(0.16,1,0.3,1);
   --safe-top:env(safe-area-inset-top,0px);
   --safe-bottom:env(safe-area-inset-bottom,0px);
 }
 [data-theme="dark"]{
-  --ink:#f0ede6;--ink-2:#c5c0b5;--ink-3:#7a7670;
+  --ink:#f0ede6;--ink-2:#c5c0b5;--ink-3:#a29e96;
   --paper:#0f0f0d;--paper-2:#1a1917;--paper-3:#262420;
   --white:#1e1c1a;
-  --green:#2d9e62;--green-mid:#3db876;--green-light:#0d2b1a;
+  --green:#34a96b;--green-mid:#3db876;--green-light:#0d2b1a;
 }
 [data-theme="dark"] header{background:rgba(15,15,13,.94)}
 [data-theme="dark"] .calc-card,[data-theme="dark"] .about-card,[data-theme="dark"] .feedback-card,[data-theme="dark"] .faq-item,[data-theme="dark"] .support-card{background:var(--white);border-color:var(--paper-3)}
@@ -621,9 +624,49 @@ footer{border-top:1px solid var(--paper-3);padding:3rem 2rem 2rem;padding-bottom
   *{animation-duration:.01ms!important;transition-duration:.01ms!important}
   .hero-h1 .key::after{animation:none;transform:scaleX(1)}
 }
+
+/* accessibility + speed pass */
+.skip{position:absolute;left:.5rem;top:-5rem;z-index:1000;background:var(--ink);color:var(--paper);padding:.65rem 1rem;border-radius:8px;font:600 .9rem var(--ff-b);text-decoration:none;min-height:44px;display:inline-flex;align-items:center}.skip:focus{top:.5rem;outline:2px solid var(--green);outline-offset:2px}main:focus{outline:none}
+:root{--hn:#858585}
+[data-theme="dark"]{--hn:#6e6a64}
+.hn{color:var(--hn)}
+.rf::before{content:"\20B9"}
+a:focus-visible,button:focus-visible,summary:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.fb-note a,.support-note a,.support-intro a,.about-body a,.faq-a-inner a,.ai-body a,.amazon-note a,p a,.footer-bottom a,.footer-compare a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}
+.fb-note a:hover,.support-note a:hover,.about-body a:hover,.faq-a-inner a:hover,.footer-bottom a:hover,.footer-compare a:hover{text-decoration-thickness:2px}
+.logo,.footer-logo{display:inline-flex;align-items:center;min-height:36px}
+.nav-pill{display:inline-flex;align-items:center;min-height:36px}
+.lang-btn,.dm-toggle{min-height:36px;min-width:36px}
+.nav-hamburger{min-height:40px;min-width:40px}
+.share-modal-close{min-height:40px;padding:.5rem 1rem}
+.footer-links{gap:.1rem}
+.footer-links a{display:flex;align-items:center;min-height:32px}
+.footer-compare{gap:.15rem}
+.footer-compare div{gap:0 .9rem}
+.footer-compare a{display:inline-flex;align-items:center;min-height:32px}
+@media(max-width:700px){.footer-links{gap:.1rem 1rem}}
+.vsub{color:rgba(255,255,255,.92)}
+.scv-eyebrow{color:rgba(255,255,255,.88)}
+.scv-sub{color:rgba(255,255,255,.92)}
+.vpill{background:rgba(0,0,0,.22)}
+.scv-cities{background:rgba(0,0,0,.22)}
+.share-btn.tw:hover,.smbtn.tw:hover{border-color:#0b6fa8;color:#0b6fa8}
+.share-btn.wa:hover,.smbtn.wa:hover{border-color:#0e7c4a;color:#0e7c4a}
+.share-btn.li:hover,.smbtn.li:hover{border-color:#006699;color:#006699}
+[data-theme="dark"] .share-btn.tw:hover,[data-theme="dark"] .smbtn.tw:hover{border-color:#1da1f2;color:#1da1f2}
+[data-theme="dark"] .share-btn.wa:hover,[data-theme="dark"] .smbtn.wa:hover{border-color:#25d366;color:#25d366}
+[data-theme="dark"] .share-btn.li:hover,[data-theme="dark"] .smbtn.li:hover{border-color:#4aa8dc;color:#4aa8dc}
+.faq-a{visibility:hidden;transition:max-height 400ms var(--ease),visibility 0s linear 400ms}
+.faq-item.open .faq-a{visibility:visible;transition:max-height 400ms var(--ease),visibility 0s}
+.share-overlay{visibility:hidden;transition:opacity 250ms,visibility 0s linear 250ms}
+.share-overlay.show{visibility:visible;transition:opacity 250ms,visibility 0s}
+@keyframes fadeup-lite{from{transform:translateY(14px)}to{transform:none}}
+.hero-h1.ani,.hero-h1-hi.ani,.hero-coverage.ani,.diff-card.ani,.hero-sub.ani,.hero-sub-hi.ani{animation-name:fadeup-lite;animation-duration:.5s}
 </style>
 </head>
 <body>
+<a class="skip" id="skip-link" href="#main">Skip to main content</a>
+
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K4674FL9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
@@ -666,7 +709,7 @@ footer{border-top:1px solid var(--paper-3);padding:3rem 2rem 2rem;padding-bottom
   </nav>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 <section class="hero" id="home" aria-labelledby="hero-heading">
   <div class="hgrid" aria-hidden="true"></div>
   <!-- 3D city cards (900px and wider), filled by JS -->
@@ -780,9 +823,9 @@ footer{border-top:1px solid var(--paper-3);padding:3rem 2rem 2rem;padding-bottom
       <div>
         <div class="ls-label" id="lifestyle-label">Lifestyle</div>
         <div class="ls-pills" role="group">
-          <button class="lpill" data-val="frugal" onclick="setLS(this)" id="ls-frugal">Frugal</button>
-          <button class="lpill on" data-val="moderate" onclick="setLS(this)" id="ls-moderate">Moderate</button>
-          <button class="lpill" data-val="comfortable" onclick="setLS(this)" id="ls-comfortable">Comfortable</button>
+          <button class="lpill" data-val="frugal" onclick="setLS(this)" id="ls-frugal" aria-pressed="false">Frugal</button>
+          <button class="lpill on" data-val="moderate" onclick="setLS(this)" id="ls-moderate" aria-pressed="true">Moderate</button>
+          <button class="lpill" data-val="comfortable" onclick="setLS(this)" id="ls-comfortable" aria-pressed="false">Comfortable</button>
         </div>
       </div>
     </div>
@@ -815,12 +858,12 @@ footer{border-top:1px solid var(--paper-3);padding:3rem 2rem 2rem;padding-bottom
         <div class="vote-more" id="voteMore" hidden>
           <div class="vote-why" id="vote-why">What looks off? Pick any that apply.</div>
           <div class="vote-chips" id="voteChips">
-            <button type="button" class="vote-chip" data-r="salary_high" id="vr-1" onclick="toggleChip(this)">Salary looks too high</button>
-            <button type="button" class="vote-chip" data-r="salary_low" id="vr-2" onclick="toggleChip(this)">Salary looks too low</button>
-            <button type="button" class="vote-chip" data-r="rent" id="vr-3" onclick="toggleChip(this)">Rent looks wrong</button>
-            <button type="button" class="vote-chip" data-r="other_costs" id="vr-4" onclick="toggleChip(this)">Food or other costs look wrong</button>
-            <button type="button" class="vote-chip" data-r="role" id="vr-5" onclick="toggleChip(this)">My role is missing or wrong</button>
-            <button type="button" class="vote-chip" data-r="other" id="vr-6" onclick="toggleChip(this)">Something else</button>
+            <button type="button" class="vote-chip" data-r="salary_high" id="vr-1" aria-pressed="false" onclick="toggleChip(this)">Salary looks too high</button>
+            <button type="button" class="vote-chip" data-r="salary_low" id="vr-2" aria-pressed="false" onclick="toggleChip(this)">Salary looks too low</button>
+            <button type="button" class="vote-chip" data-r="rent" id="vr-3" aria-pressed="false" onclick="toggleChip(this)">Rent looks wrong</button>
+            <button type="button" class="vote-chip" data-r="other_costs" id="vr-4" aria-pressed="false" onclick="toggleChip(this)">Food or other costs look wrong</button>
+            <button type="button" class="vote-chip" data-r="role" id="vr-5" aria-pressed="false" onclick="toggleChip(this)">My role is missing or wrong</button>
+            <button type="button" class="vote-chip" data-r="other" id="vr-6" aria-pressed="false" onclick="toggleChip(this)">Something else</button>
           </div>
           <textarea class="fb-input fb-textarea" id="voteText" maxlength="500" aria-label="Details"></textarea>
           <button type="button" class="vote-send" id="vote-send" onclick="sendVoteDetail()">Send</button>
@@ -1547,11 +1590,12 @@ function init3DCards(){
     setTimeout(()=>{el.style.transition='opacity 700ms cubic-bezier(0.16,1,0.3,1)';el.style.opacity='1'},def.delay+400);
     cardEls.push({el,depth:def.depth});
   });
-  let hx=0,hy=0,thx=0,thy=0;
-  document.addEventListener('mousemove',e=>{thx=(e.clientX/window.innerWidth-.5);thy=(e.clientY/window.innerHeight-.5)});
+  let hx=0,hy=0,thx=0,thy=0,vw=window.innerWidth,vh=window.innerHeight;
+  addEventListener('resize',()=>{vw=window.innerWidth;vh=window.innerHeight},{passive:true});
+  document.addEventListener('mousemove',e=>{thx=(e.clientX/vw-.5);thy=(e.clientY/vh-.5)},{passive:true});
   (function anim(){
     hx+=(thx-hx)*.055;hy+=(thy-hy)*.055;
-    if(!document.hidden&&window.innerWidth>=900){
+    if(!document.hidden&&vw>=900&&(Math.abs(thx-hx)>.0003||Math.abs(thy-hy)>.0003)){
       cardEls.forEach(({el,depth})=>{
         const f=depth/80;
         el.style.transform=`perspective(900px) translate(${hx*18*f}px,${hy*12*f}px) rotateX(${Math.max(-5,Math.min(5,hy*6))}deg) rotateY(${Math.max(-5,Math.min(5,hx*6))}deg)`;
@@ -1618,8 +1662,8 @@ function onCalcCity(){
 }
 
 function setLS(btn){
-  document.querySelectorAll('.lpill').forEach(b=>b.classList.remove('on'));
-  btn.classList.add('on');ls=btn.dataset.val;
+  document.querySelectorAll('.lpill').forEach(b=>{b.classList.remove('on');b.setAttribute('aria-pressed','false')});
+  btn.classList.add('on');btn.setAttribute('aria-pressed','true');ls=btn.dataset.val;
 }
 
 function scrollToCalc(){
@@ -1634,8 +1678,8 @@ function buildFAQ(){
   if(!el)return;
   el.innerHTML=faqs.map((f,i)=>`
     <div class="faq-item" id="faq-${i}">
-      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">${f.q}<em class="faq-icon" aria-hidden="true">+</em></button>
-      <div class="faq-a" role="region"><div class="faq-a-inner">${f.a}</div></div>
+      <button class="faq-q" id="faq-q-${i}" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-a-${i}">${f.q}<em class="faq-icon" aria-hidden="true">+</em></button>
+      <div class="faq-a" id="faq-a-${i}" role="region" aria-labelledby="faq-q-${i}"><div class="faq-a-inner">${f.a}</div></div>
     </div>`).join('');
 }
 
@@ -1646,10 +1690,13 @@ function buildAbout(){
 }
 
 // ══ LANGUAGE TOGGLE ══
+function whenIdle(fn){const run=()=>{window.requestIdleCallback?requestIdleCallback(fn,{timeout:2500}):setTimeout(fn,300)};if(document.readyState==='complete')run();else addEventListener('load',run,{once:true})}
+const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 function applyLang(){
   const hi=currentLang==='hi';
   document.documentElement.setAttribute('data-lang',currentLang);
   document.documentElement.setAttribute('lang',hi?'hi':'en-IN');
+  const skl=document.getElementById('skip-link');if(skl)skl.textContent=hi?'मुख्य सामग्री पर जाएं':'Skip to main content';
 
   // Update all elements with TR keys
   Object.keys(TR[currentLang]).forEach(k=>{
@@ -1920,9 +1967,9 @@ function resetVote(){
   ['voteUp','voteDown'].forEach(id=>{const b=document.getElementById(id);if(b){b.disabled=false;b.classList.remove('picked');b.setAttribute('aria-pressed','false')}});
   const m=document.getElementById('voteMore'),th=document.getElementById('voteThanks'),tx=document.getElementById('voteText');
   if(m)m.hidden=true;if(th){th.hidden=true;th.textContent=''}if(tx)tx.value='';
-  document.querySelectorAll('.vote-chip.on').forEach(c=>c.classList.remove('on'));
+  document.querySelectorAll('.vote-chip.on').forEach(c=>{c.classList.remove('on');c.setAttribute('aria-pressed','false')});
 }
-function toggleChip(b){b.classList.toggle('on')}
+function toggleChip(b){b.classList.toggle('on');b.setAttribute('aria-pressed',b.classList.contains('on')?'true':'false')}
 function showVoteThanks(k){voteKey=k;const th=document.getElementById('voteThanks');th.textContent=t(k);th.hidden=false}
 function castVote(v){
   if(!lastCalc||voteDone)return;
@@ -2026,8 +2073,8 @@ function copyShareLink(){
 })();
 
 // PARTICLES
-(function(){
-  const canvas=document.getElementById('particleCanvas');if(!canvas)return;
+whenIdle(function(){
+  const canvas=document.getElementById('particleCanvas');if(!canvas||reduceMotion)return;
   const ctx=canvas.getContext('2d');
   let W,H,particles=[],running=true;
   function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight}
@@ -2051,13 +2098,13 @@ function copyShareLink(){
     });requestAnimationFrame(draw);
   }
   draw();
-})();
+});
 
 // FLOATING RUPEES
-(function(){
-  function spawn(){const el=document.createElement('div');el.className='rf';el.textContent='₹';const sz=Math.random()*50+22;el.style.cssText=`font-size:${sz}px;left:${Math.random()*100}%;top:${78+Math.random()*18}%;animation-duration:${8+Math.random()*9}s;animation-delay:${-Math.random()*5}s`;document.body.appendChild(el);setTimeout(()=>el.remove(),(17+Math.random()*9)*1000)}
+whenIdle(function(){if(reduceMotion)return;
+  function spawn(){const el=document.createElement('div');el.className='rf';el.setAttribute('aria-hidden','true');const sz=Math.random()*50+22;el.style.cssText=`font-size:${sz}px;left:${Math.random()*100}%;top:${78+Math.random()*18}%;animation-duration:${8+Math.random()*9}s;animation-delay:${-Math.random()*5}s`;document.body.appendChild(el);setTimeout(()=>el.remove(),(17+Math.random()*9)*1000)}
   for(let i=0;i<6;i++)setTimeout(spawn,i*1200);setInterval(spawn,3200);
-})();
+});
 
 // DARK MODE
 function toggleDark(){
